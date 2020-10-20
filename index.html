@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="app.js"></script>
+    <title>Paint Demo</title>
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <div class="toolbar">
+        
+        <a class ="selected" href="#" id="pen" onclick="ChangeTool('pen')">
+          <img
+            src="/Toolbar/Icons/Pen/Module - 3 skissur/24/basic/icon.png"
+            alt=""
+          />
+        </a>
+        <a href="#" id="bucket" onclick="ChangeTool('bucket')">
+          <img
+            src="/Toolbar/Icons/Bucket/Module - 3 skissur/Union.png"
+            alt=""
+          />
+        </a>
+        <a href="#" id="text" onclick="ChangeTool('text')">
+          <img src="/Toolbar/Icons/Text/t.png" alt="">
+        </a>
+        <a href="#" id="colordrop" onclick="ChangeTool('colordrop')">
+          <img
+            src="/Toolbar/Icons/colorDrop/Module - 3 skissur/Rectangle 89.png"
+            alt=""
+          />
+        </a>
+        <a href="#" id="sword" onclick="ChangeTool('sword')">
+          <img
+            src="/Toolbar/Icons/Sword/Module - 3 skissur/noun_Color Picker_538498 1.png"
+            alt=""
+          />
+        </a>
+
+        <a href="#" id="shapes" onclick= "ChangeTool('shapes')">
+          <img src="/Toolbar/Icons/Shapes/shapes tool.png" alt="">
+        </a>
+        <a href="#" id="extend" onclick="ChangeTool('extend')">
+          <img
+            src="/Toolbar/Icons/extendDots/Module - 3 skissur/dots.png"
+            alt=""
+          />
+        </a>
+      </div>
+      <br />
+      <canvas id="my-canvas" width="600" height="600"
+      <div id="">
+        <a href="#" id="" download="">Download your image!</a>
+      </div>
+    </div>
+  </body>
+</html>
