@@ -3,16 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/styles.css" />
     <script src="app.js"></script>
     <title>Paint Demo</title>
   </head>
   <body>
     <div class="wrapper">
-
-      <div class="toolbar">
-        
-        <a class ="selected" href="#" id="pen" onclick="ChangeTool('pen')">
+      <aside class="toolbar">
+        <a class="selected" href="#" id="pen" onclick="ChangeTool('pen')">
           <img
             src="/Toolbar/Icons/Pen/Module - 3 skissur/24/basic/icon.png"
             alt=""
@@ -25,23 +23,20 @@
           />
         </a>
         <a href="#" id="text" onclick="ChangeTool('text')">
-          <img src="/Toolbar/Icons/Text/t.png" alt="">
+          <img src="/Toolbar/Icons/Text/t.svg" alt="" />
         </a>
         <a href="#" id="colordrop" onclick="ChangeTool('colordrop')">
           <img
-            src="/Toolbar/Icons/colorDrop/Module - 3 skissur/Rectangle 89.png"
+            src="/Toolbar/Icons/colorDrop/Module - 3 skissur/color-wheel.png"
             alt=""
           />
         </a>
         <a href="#" id="sword" onclick="ChangeTool('sword')">
-          <img
-            src="/Toolbar/Icons/Sword/Module - 3 skissur/noun_Color Picker_538498 1.png"
-            alt=""
-          />
+          <img src="Toolbar\Icons\Sword\color-picker.svg" alt="" />
         </a>
 
-        <a href="#" id="shapes" onclick= "ChangeTool('shapes')">
-          <img src="/Toolbar/Icons/Shapes/shapes tool.png" alt="">
+        <a href="#" id="shapes" onclick="ChangeTool('shapes')">
+          <img src="/Toolbar/Icons/Shapes/shapes tool.svg" alt="" />
         </a>
         <a href="#" id="extend" onclick="ChangeTool('extend')">
           <img
@@ -49,12 +44,19 @@
             alt=""
           />
         </a>
-      </div>
-      <br />
-      <canvas id="my-canvas" width="600" height="600"
-      <div id="">
-        <a href="#" id="" download="">Download your image!</a>
-      </div>
+      </aside>
+      <main>
+        <div class="logo">
+          <img src="logo/logo.svg" alt="" />
+        </div>
+
+        <div class="canvas">
+          <canvas id="my-canvas" width="auto" height="auto"></canvas>
+          <div id="">
+            <a href="#" id="" download="">Download your image!</a>
+          </div>
+        </div>
+      </main>
     </div>
   </body>
 </html>
