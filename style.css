@@ -1,5 +1,4 @@
 .wrapper {
-  
   max-width: 900px;
   margin: auto;
   font-family: Arial, Helvetica, sans-serif;
@@ -7,33 +6,44 @@
 
 .toolbar {
   display: flex;
+  position: absolute;
+  z-index: 2;
   justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 100px;
+  height: 90vh;
+  margin-top: 20px;
   background-color: #33363d;
   overflow: auto;
+  border-radius: 10px;
+  filter: drop-shadow(10px 10px 10px rgb(31, 30, 30));
 }
 
 .toolbar a {
-  float: left;
-  width: 11%;
-  text-align: center;
-  padding: 6px 5px;
+  display: flex;
+  position:relative;
+  margin: 5px 5px;
+  padding: 5px 5px;
   transition: all 0.3s;
-  background-color: #33363D;
+}
+.swordtool{
+  padding-top: 5px;
 }
 
 .toolbar a:hover {
   background-color: black;
-}
-
-.selected {
-  background-color: black;
+  border-radius: 50%;
 }
 
 #my-canvas {
-  width: 100%;
-  border: 3px solid black;
+  position:absolute;
+  background-color: #33363D;
+  height: 90vh;
+  width: 100vh;
+  border-radius: 10px;
+  filter: drop-shadow(10px 10px 10px rgb(31, 30, 30));
+  
 }
 
 #img-data-div {
@@ -42,7 +52,4 @@
   height: 200px;
 }
 
-.toolbar a img {
-  max-width: 100%;
-  height: auto;
-}
+
