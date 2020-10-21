@@ -23,7 +23,7 @@
           />
         </a>
         <a href="#" id="text" onclick="ChangeTool('text')">
-          <img src="/Toolbar/Icons/Text/t.svg" alt="" />
+          <img class="texticon" src="/Toolbar/Icons/Text/t.svg" alt="" />
         </a>
         <a href="#" id="colordrop" onclick="ChangeTool('colordrop')">
           <img
@@ -32,9 +32,8 @@
           />
         </a>
         <a href="#" id="sword" onclick="ChangeTool('sword')">
-          <img src="Toolbar\Icons\Sword\color-picker.svg" alt="" />
+          <img class="swordtool" src="Toolbar\Icons\Sword\color-picker.svg" alt="" />
         </a>
-
         <a href="#" id="shapes" onclick="ChangeTool('shapes')">
           <img src="/Toolbar/Icons/Shapes/shapes tool.svg" alt="" />
         </a>
@@ -49,11 +48,10 @@
         <div class="logo">
           <img src="logo/logo.svg" alt="" />
         </div>
-
         <div class="canvas">
-          <canvas id="my-canvas" width="auto" height="auto"></canvas>
+          <canvas id="my-canvas"></canvas>
           <div id="">
-            <a href="#" id="" download="">Download your image!</a>
+            <a href="#" id="" clearImage="">Clear</a>
           </div>
         </div>
       </main>

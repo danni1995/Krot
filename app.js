@@ -10,6 +10,9 @@ let currentTool = 'pen';
 let canvasWidth = 600;
 let canvasHeight = 600;
 
+
+
+
 class ShapeBoundingBox{
     constructor(left, top, width, height){
         this.left = left;
@@ -57,6 +60,7 @@ function setupCanvas(){
 }
 
 function ChangeTool(toolClicked){
+    
     document.getElementById('pen').className = "";
     document.getElementById('bucket').className = "";
     document.getElementById('text').className = "";
@@ -162,16 +166,16 @@ function ReactToMouseDown(e){
     // Store that yes the mouse is being held down
     dragging = true;
 };
+
+
+
+
 //ReactToMouseMove
 function ReactToMouseMove(e){
     canvas.style.cursor = "crosshair";
     loc = GetMousePosition(e.clientX, e.clientY);
-    if(dragging){
-        RedrawCanvasImage();
-        UpdateRubberbandOnMove(loc);
-    }
 
-}
+    
 
 
 //ReactToMouseUp
@@ -181,23 +185,7 @@ function ReactToMouseMove(e){
      RedrawCanvasImage();
      UpdateRubberbandOnMove(loc);
      dragging = false;
-     usingBrush = false;
+     usingPen = false;
     
-    }
-//SaveImage
-function SaveImage(){
-    var imageFiles = document.getElementById('img-file');
-    imageFile.setAttribute('download', 'image-png');
-    imageFile.setAttribute('href', canvas.to.dataURL());
-}
-
-
-//OpenImage
-function OpemImage(){
-    let img = new Image();
-    img.onload = function(){
-        ctx.clearReact(0,0,canvas.width, canvas.height);
-        ctx.drawImage(img,0,0);
-    }
-    img.src = 'image-png';
+ }
 }
