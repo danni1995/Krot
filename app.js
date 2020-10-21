@@ -60,7 +60,7 @@ function setupCanvas(){
 }
 
 function ChangeTool(toolClicked){
-    console.log(ChangeTool);
+    
     document.getElementById('pen').className = "";
     document.getElementById('bucket').className = "";
     document.getElementById('text').className = "";
