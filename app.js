@@ -10,6 +10,9 @@ let currentTool = 'pen';
 let canvasWidth = 600;
 let canvasHeight = 600;
 
+
+
+
 class ShapeBoundingBox{
     constructor(left, top, width, height){
         this.left = left;
@@ -162,16 +165,16 @@ function ReactToMouseDown(e){
     // Store that yes the mouse is being held down
     dragging = true;
 };
+
+
+
+
 //ReactToMouseMove
 function ReactToMouseMove(e){
     canvas.style.cursor = "crosshair";
     loc = GetMousePosition(e.clientX, e.clientY);
-    if(dragging){
-        RedrawCanvasImage();
-        UpdateRubberbandOnMove(loc);
-    }
 
-}
+    
 
 
 //ReactToMouseUp
@@ -181,7 +184,7 @@ function ReactToMouseMove(e){
      RedrawCanvasImage();
      UpdateRubberbandOnMove(loc);
      dragging = false;
-     usingBrush = false;
+     usingPen = false;
     
     }
 //SaveImage
@@ -200,4 +203,6 @@ function OpemImage(){
         ctx.drawImage(img,0,0);
     }
     img.src = 'image-png';
+}
+
 }
