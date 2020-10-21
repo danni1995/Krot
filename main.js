@@ -60,6 +60,7 @@ function setupCanvas(){
 }
 
 function ChangeTool(toolClicked){
+    console.log(ChangeTool);
     document.getElementById('pen').className = "";
     document.getElementById('bucket').className = "";
     document.getElementById('text').className = "";
@@ -186,23 +187,5 @@ function ReactToMouseMove(e){
      dragging = false;
      usingPen = false;
     
-    }
-//SaveImage
-function SaveImage(){
-    var imageFiles = document.getElementById('img-file');
-    imageFile.setAttribute('download', 'image-png');
-    imageFile.setAttribute('href', canvas.to.dataURL());
-}
-
-
-//OpenImage
-function OpemImage(){
-    let img = new Image();
-    img.onload = function(){
-        ctx.clearReact(0,0,canvas.width, canvas.height);
-        ctx.drawImage(img,0,0);
-    }
-    img.src = 'image-png';
-}
-
+ }
 }
