@@ -174,18 +174,17 @@ function ReactToMouseDown(e){
 function ReactToMouseMove(e){
     canvas.style.cursor = "crosshair";
     loc = GetMousePosition(e.clientX, e.clientY);
-
+}
     
 
 
 //ReactToMouseUp
- function ReactToMouseUp(e){
-     canvas.style.cursor ="default"
-     loc = GetMousePosition(e.clientX, e.clientY);
-     RedrawCanvasImage();
-     UpdateRubberbandOnMove(loc);
-     dragging = false;
-     usingPen = false;
-    
- }
+function ReactToMouseUp(e){
+    canvas.style.cursor ="default"
+    loc = GetMousePosition(e.clientX, e.clientY);
+    RedrawCanvasImage();
+    UpdateRubberbandOnMove(loc);
+    dragging = false;
+    usingPen = false;
+
 }
