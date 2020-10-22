@@ -1,0 +1,15 @@
+
+@mixin button-dark {
+  height: 48px;
+  width: 48px;
+  background-color: #33363D;
+  box-shadow: 9px 9px 16px #11131670, -9px -9px 16px #49494960;
+  border-radius: 60px;
+  display: block;
+}
+
+@mixin large-shade {
+  background-color: #33363D;
+  box-shadow: -23px -23px 50px #3B3C41, 28px 28px 45px #11131660;
+}
+
