@@ -8,53 +8,53 @@
     <title>Paint Demo</title>
   </head>
   <body>
+    <div class="logo">
+      <img src="/Toolbar/Logo/logo.svg" alt="" />
+    </div>
+
     <div class="wrapper">
+      <canvas id="my-canvas" width="1200" height="1200"></canvas>
+    </div>
+    <div class="toolbar">
+      <a href="#" id="pen" onclick="ChangeTool('pen')">
+        <img
+          src="/Toolbar/Icons/Pen/Module - 3 skissur/24/basic/icon.png"
+          alt=""
+        />
+      </a>
+      <a href="#" id="bucket" onclick="ChangeTool('bucket')">
+        <img src="/Toolbar/Icons/Bucket/Module - 3 skissur/Union.png" alt="" />
+      </a>
+      <a href="#" id="text" onclick="ChangeTool('text')">
+        <img
+          class="texticon"
+          src="/Toolbar/Icons/textdemo/Module - 3 phase two/t.svg"
+          alt=""
+        />
+      </a>
+      <a href="#" id="colordrop" onclick="ChangeTool('colordrop')">
+        <img
+          src="/Toolbar/Icons/colorDrop/Module - 3 skissur/Rectangle 89.png"
+          alt=""
+        />
+      </a>
+      <a href="#" id="sword" onclick="ChangeTool('sword')">
+        <img
+          class="swordtool"
+          src="/Toolbar/Icons/Sword/Module - 3 skissur/noun_Color Picker_538498 1.png"
+          alt=""
+        />
+      </a>
 
-      <div class="toolbar">
-        
-        <a  href="#" id="pen" onclick="ChangeTool('pen')">
-          <img
-            src="/Toolbar/Icons/Pen/Module - 3 skissur/24/basic/icon.png"
-            alt=""
-          />
-        </a>
-        <a href="#" id="bucket" onclick="ChangeTool('bucket')">
-          <img
-            src="/Toolbar/Icons/Bucket/Module - 3 skissur/Union.png"
-            alt=""
-          />
-        </a>
-        <a href="#" id="text" onclick="ChangeTool('text')">
-          <img class="texticon" src="/Toolbar/Icons/textdemo/Module - 3 phase two/t.svg" alt="">
-        </a>
-        <a href="#" id="colordrop" onclick="ChangeTool('colordrop')">
-          <img
-            src="/Toolbar/Icons/colorDrop/Module - 3 skissur/Rectangle 89.png"
-            alt=""
-          />
-        </a>
-        <a href="#" id="sword" onclick="ChangeTool('sword')">
-          <img class ="swordtool"
-            src="/Toolbar/Icons/Sword/Module - 3 skissur/noun_Color Picker_538498 1.png"
-            alt=""
-          />
-        </a>
-
-        <a href="#" id="shapes" onclick= "ChangeTool('shapes')">
-          <img src="/Toolbar/Icons/Shapes/shapes tool.png" alt="">
-        </a>
-        <a href="#" id="extend" onclick="ChangeTool('extend')">
-          <img
-            src="/Toolbar/Icons/extendDots/Module - 3 skissur/dots.png"
-            alt=""
-          />
-        </a>
-      </div>
-      <br />
-      <canvas id="my-canvas" width="800" height="400"
-      <div id="">
-        <a href="#" id="" clearImage="">Clear</a>
-      </div>
+      <a href="#" id="shapes" onclick="ChangeTool('shapes')">
+        <img src="/Toolbar/Icons/Shapes/shapes tool.png" alt="" />
+      </a>
+      <a href="#" id="extend" onclick="ChangeTool('extend')">
+        <img
+          src="/Toolbar/Icons/extendDots/Module - 3 skissur/dots.png"
+          alt=""
+        />
+      </a>
     </div>
   </body>
 </html>
