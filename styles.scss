@@ -21,7 +21,7 @@ html, body {
 .toolbar {
   width: 88px;
   height: 100%;
-  padding-top: 6rem;
+  padding-top: 4rem;
   @include shade.large-shade;
 
   & a {

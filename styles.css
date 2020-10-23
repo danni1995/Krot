@@ -40,7 +40,7 @@ html, body {
 .toolbar {
   width: 88px;
   height: 100%;
-  padding-top: 6rem;
+  padding-top: 4rem;
   background-color: #33363D;
   box-shadow: -23px -23px 50px #3B3C41, 28px 28px 45px #11131660;
 }
