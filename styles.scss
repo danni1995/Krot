@@ -21,13 +21,13 @@ html, body {
 .toolbar {
   width: 88px;
   height: 100%;
-  padding-top: 8rem;
+  padding-top: 6rem;
   @include shade.large-shade;
 
   & a {
     transition: all 0.3s;
     margin: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     @include shade.button-dark;
   }
   
@@ -42,6 +42,19 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%); 
   }
+
+  & .dots {
+   top: 40%;
+  }
+
+  & .color-drop {
+    top: 55%;
+  }
+
+  & .shapes {
+    top: 55%;
+  }
+  
 }
 
 .selected {
@@ -62,8 +75,7 @@ main {
   width: calc(100% - 88px);
   display: flex;
   flex-direction: column;
- 
-  align-items: center;
+  align-items: flex-end;
 }
 
 #my-canvas {
