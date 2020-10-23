@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "sass": "sass --watch styles.scss styles.css"
+    },
+    "devDependencies": {
+        "prettier": "2.1.2"
+    }
+}
