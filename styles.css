@@ -1,24 +1,3 @@
-/*$primary-color-light: #f2f2f2;
-$primary-color-dark: #33363d; 
-$accent-color-dark: #fda704
-$accent-color-light: #0d2750;
-
-
-#111316
-Dark shadow
-dark/light mode
-
-#3B3C41
-Light shade Dark mode
-
-#404145
-Light shade 
-inverted button
-Dark mode
-
-#FFFFFF
-Light shade
-light mode*/
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +6,7 @@ light mode*/
 
 html, body {
   height: 100vh;
-  background-color: #33363D;
+  background-color: #f2f2f2;
 }
 
 .wrapper {
@@ -40,9 +19,9 @@ html, body {
 .toolbar {
   width: 88px;
   height: 100vh;
-  padding-top: 4rem;
-  background-color: #33363D;
-  box-shadow: -23px -23px 50px #3B3C41, 28px 28px 45px #11131660;
+  padding-top: 6rem;
+  background-color: #f2f2f2;
+  box-shadow: -20px -20px 45px #ffffff, 20px 20px 45px #11131616;
 }
 .toolbar a {
   transition: all 0.3s;
@@ -50,13 +29,16 @@ html, body {
   margin-top: 2rem;
   height: 48px;
   width: 48px;
-  background-color: #33363D;
-  box-shadow: 9px 9px 16px #11131670, -9px -9px 16px #49494960;
+  background-color: #f2f2f2;
+  box-shadow: -5px -5px 10px #ffffff, -5px -5px 10px #ffffff, 5px 5px 10px #11131616;
   border-radius: 60px;
   display: block;
 }
 .toolbar a:hover {
-  box-shadow: inset -5px -5px 10px rgba(94, 91, 91, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131616;
+}
+.toolbar a:focus {
+  box-shadow: -5px -5px 10px #ffffff inset, 5px 5px 10px #11131616 inset;
 }
 .toolbar a img {
   position: relative;
@@ -74,10 +56,6 @@ html, body {
   top: 55%;
 }
 
-.selected {
-  background-color: black;
-}
-
 main {
   width: 100%;
 }
@@ -88,15 +66,15 @@ main {
 }
 
 .mycanvas {
-  width: calc(100% - 88px);
+  width: calc(100% + 88px);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 }
 
 #my-canvas {
-  background-color: #33363D;
-  box-shadow: -23px -23px 50px #3B3C41, 28px 28px 45px #11131660;
+  background-color: #f2f2f2;
+  box-shadow: -20px -20px 45px #ffffff, 20px 20px 45px #11131616;
   border-radius: 16px;
 }
 
