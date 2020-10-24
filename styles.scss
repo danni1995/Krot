@@ -41,10 +41,9 @@ html, body {
     @include shade.light-button-hover;
   }
 
-  & .item:focus {
-   @include shade.light-button-clicked;
+  & .item:target {
+   @include shade.dark-button-clicked;
   }
-  
 
   & .item img {
     position: relative;
@@ -63,9 +62,28 @@ html, body {
 
   & img.shapes {
     top: 55%;
- 
   }
+}
+
+.shapes-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   
+  & .tool-test {
+    position: relative;
+    left: 5rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background-color: $primary-color-light;
+    @include shade.light-button-hover;
+  }
+
+  & .item {
+    margin: 2rem 1rem;
+  }
+
 }
 
 main {
@@ -74,8 +92,7 @@ main {
 
 .logo {
   width: calc(100% - 88px);
-  margin: 2rem 0 0 3rem;
-  
+  margin: 1rem 0 0 1rem;
 }
 
 .mycanvas {
@@ -95,8 +112,6 @@ main {
   max-width: 900px;
   height: 200px;
 }
-
-
 
 
   

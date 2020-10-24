@@ -33,13 +33,13 @@ $dark-shadow: #111316;
   height: 48px;
   width: 48px;
   background-color: $primary-color-light;
-  box-shadow: -5px -5px 10px #ffffff, -5px -5px 10px #ffffff, 5px 5px 10px #11131616;
+  box-shadow: -5px -5px 10px #ffffff, -5px -5px 10px #ffffff, 5px 5px 10px #11131626;
   border-radius: 60px;
   display: block;
 }
 
 @mixin light-button-hover {
-  box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131616;
+  box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131626;
 }
 
 @mixin light-button-clicked {

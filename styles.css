@@ -30,15 +30,15 @@ html, body {
   height: 48px;
   width: 48px;
   background-color: #f2f2f2;
-  box-shadow: -5px -5px 10px #ffffff, -5px -5px 10px #ffffff, 5px 5px 10px #11131616;
+  box-shadow: -5px -5px 10px #ffffff, -5px -5px 10px #ffffff, 5px 5px 10px #11131626;
   border-radius: 60px;
   display: block;
 }
 .toolbar .item:hover {
-  box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131616;
+  box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131626;
 }
-.toolbar .item:focus {
-  box-shadow: -5px -5px 10px #ffffff inset, 5px 5px 10px #11131616 inset;
+.toolbar .item:target {
+  box-shadow: -5px -5px 10px #40414550 inset, 5px 5px 10px #11131650 inset;
 }
 .toolbar .item img {
   position: relative;
@@ -56,13 +56,31 @@ html, body {
   top: 55%;
 }
 
+.shapes-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.shapes-wrapper .tool-test {
+  position: relative;
+  left: 5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131626;
+}
+.shapes-wrapper .item {
+  margin: 2rem 1rem;
+}
+
 main {
   width: 100%;
 }
 
 .logo {
   width: calc(100% - 88px);
-  margin: 2rem 0 0 3rem;
+  margin: 1rem 0 0 1rem;
 }
 
 .mycanvas {
