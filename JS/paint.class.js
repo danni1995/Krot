@@ -5,9 +5,6 @@ export default class Paint {
         console.log(this.tool);
     }
 
-    init() {
-        this.canvas.onmousedown = e => this.onMouseDown(e);
-    }
 
     onMouseDown(e) {
 
