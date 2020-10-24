@@ -1,4 +1,10 @@
-@use "shade";
+@use "shade" ;
+
+$primary-color-light: #f2f2f2;
+$accent-color-light: #0d2750;
+$primary-color-dark: #33363d; 
+$accent-color-dark: #fda704;
+$dark-shadow: #111316;
 
 * {
   margin: 0;
@@ -8,7 +14,7 @@
 
 html, body {
   height: 100vh;
-  background-color: #33363D;
+  background-color: $primary-color-light;
 }
 
 .wrapper {
@@ -21,20 +27,24 @@ html, body {
 .toolbar {
   width: 88px;
   height: 100vh;
-  padding-top: 4rem;
-  @include shade.large-shade;
+  padding-top: 6rem;
+  @include shade.light-large-shade;
 
   & a {
     transition: all 0.3s;
     margin: 1rem;
     margin-top: 2rem;
-    @include shade.button-dark;
+    @include shade.light-button;
   }
   
   & a:hover {
-    box-shadow: inset -5px -5px 10px rgba(94, 91, 91, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.25);
-
+    @include shade.light-button-hover;
   }
+
+  & a:focus {
+   @include shade.light-button-clicked;
+  }
+  
 
   & a img {
     position: relative;
@@ -53,12 +63,9 @@ html, body {
 
   & .shapes {
     top: 55%;
+ 
   }
   
-}
-
-.selected {
-  background-color: black;
 }
 
 main {
@@ -72,14 +79,14 @@ main {
 }
 
 .mycanvas {
-  width: calc(100% - 88px);
+  width: calc(100% + 88px);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center
 }
 
 #my-canvas {
-  @include shade.large-shade;
+  @include shade.light-large-shade;
   border-radius: 16px;
 }
 

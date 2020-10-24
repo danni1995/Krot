@@ -1,41 +1,54 @@
 
 // $primary-font: 
 // $secondary-font: 
-/*$primary-color-light: #f2f2f2;
-$primary-color-dark: #33363d; 
-$accent-color-dark: #fda704
+$primary-color-light: #f2f2f2;
 $accent-color-light: #0d2750;
+$primary-color-dark: #33363d; 
+$accent-color-dark: #fda704;
+$dark-shadow: #111316;
 
-
-#111316
-Dark shadow
-dark/light mode
-
-#3B3C41
-Light shade Dark mode
-
-#404145
-Light shade 
-inverted button
-Dark mode
-
-#FFFFFF
-Light shade
-light mode*/
-
-
-
-@mixin button-dark {
+@mixin dark-button {
   height: 48px;
   width: 48px;
   background-color: #33363D;
-  box-shadow: 9px 9px 16px #11131670, -9px -9px 16px #49494960;
+  box-shadow: -5px -5px 10px #3b3c41, -5px -5px 10px #3b3c41, 5px 5px 10px #11131650;
   border-radius: 60px;
   display: block;
 }
 
-@mixin large-shade {
+@mixin dark-button-hover {
+  box-shadow: -9px -9px 16px #3b3c41, 9px 9px 16px #11131650;
+}
+
+@mixin dark-button-clicked {
+  box-shadow: -5px -5px 10px #40414550 inset, 5px 5px 10px #11131650 inset;
+}
+
+@mixin dark-large-shade {
   background-color: #33363D;
   box-shadow: -23px -23px 50px #3B3C41, 28px 28px 45px #11131660;
 }
+
+@mixin light-button {
+  height: 48px;
+  width: 48px;
+  background-color: $primary-color-light;
+  box-shadow: -5px -5px 10px #ffffff, -5px -5px 10px #ffffff, 5px 5px 10px #11131616;
+  border-radius: 60px;
+  display: block;
+}
+
+@mixin light-button-hover {
+  box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131616;
+}
+
+@mixin light-button-clicked {
+  box-shadow: -5px -5px 10px #ffffff inset, 5px 5px 10px #11131616 inset;
+}
+
+@mixin light-large-shade {
+  background-color: $primary-color-light;
+  box-shadow: -20px -20px 45px #ffffff, 20px 20px 45px #11131616;
+}
+
 
