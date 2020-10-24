@@ -1,1 +1,104 @@
 @use "shade" ;
+
+@use "shade" ;
+
+$primary-color-light: #f2f2f2;
+$accent-color-light: #0d2750;
+$primary-color-dark: #33363d; 
+$accent-color-dark: #fda704;
+$dark-shadow: #111316;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  background-color: $primary-color-dark;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+  
+.toolbar {
+  width: 88px;
+  height: 100vh;
+  padding-top: 6rem;
+  @include shade.dark-large-shade;
+
+  & a {
+    transition: all 0.3s;
+    margin: 1rem;
+    margin-top: 2rem;
+    @include shade.dark-button;
+  }
+  
+  & a:hover {
+    @include shade.dark-button-hover;
+  }
+
+  & a:focus {
+   @include shade.dark-button-clicked;
+  }
+  
+
+  & a img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+  }
+
+  & .dots {
+   top: 40%;
+  }
+
+  & .color-drop {
+    top: 55%;
+  }
+
+  & .shapes {
+    top: 55%;
+ 
+  }
+  
+}
+
+main {
+  width: 100%;
+}
+
+.logo {
+  width: calc(100% - 88px);
+  margin: 2rem 0 0 3rem;
+  
+}
+
+.mycanvas {
+  width: calc(100% + 88px);
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+#my-canvas {
+  @include shade.dark-large-shade;
+  border-radius: 16px;
+}
+
+#img-data-div {
+  width: 100%;
+  max-width: 900px;
+  height: 200px;
+}
+
+
+
+
+  

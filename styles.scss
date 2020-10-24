@@ -30,38 +30,38 @@ html, body {
   padding-top: 6rem;
   @include shade.light-large-shade;
 
-  & a {
+  & .item {
     transition: all 0.3s;
     margin: 1rem;
     margin-top: 2rem;
     @include shade.light-button;
   }
   
-  & a:hover {
+  & .item:hover {
     @include shade.light-button-hover;
   }
 
-  & a:focus {
+  & .item:focus {
    @include shade.light-button-clicked;
   }
   
 
-  & a img {
+  & .item img {
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
   }
 
-  & .dots {
+  & img.dots {
    top: 40%;
   }
 
-  & .color-drop {
+  & img.color-wheel {
     top: 55%;
   }
 
-  & .shapes {
+  & img.shapes {
     top: 55%;
  
   }
