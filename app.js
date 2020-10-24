@@ -6,9 +6,11 @@ let strokeColor = 'black';
 let fillColor = 'black';
 let line_Width = 2;
 let pen_Width =  4;
-let currentTool = 'pen';
 let canvasWidth = 600;
 let canvasHeight = 600;
+let erasing = false;
+let toolClicked = ChangeTool();
+let currentTool = toolClicked;
 
 
 
@@ -68,6 +70,7 @@ function ChangeTool(toolClicked){
     document.getElementById('sword').className = "";
     document.getElementById('shapes').className = "";
     document.getElementById('extend').className = "";
+    document.getElementById('eraser').className = "";
     document.getElementById(toolClicked).className = "selected"
     currentTool = toolClicked;
 }
@@ -151,6 +154,13 @@ function drawRubberbandShape(loc){
 //ReactToMouseDown
 
 function ReactToMouseDown(e){
+
+    if ( currentTool = 'eraser') {
+        erasing = true;
+        dragging = true;
+        SaveCanvasImage();
+        ctx.clearRect(e.clientX, e.clientY , 100 , 100);
+    }
     // Change the mouse pointer to a crosshair
     canvas.style.cursor = "crosshair";
     // Store location 

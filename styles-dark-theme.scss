@@ -1,5 +1,7 @@
 @use "shade" ;
 
+@use "shade" ;
+
 $primary-color-light: #f2f2f2;
 $accent-color-light: #0d2750;
 $primary-color-dark: #33363d; 
@@ -14,7 +16,7 @@ $dark-shadow: #111316;
 
 html, body {
   height: 100vh;
-  background-color: $primary-color-light;
+  background-color: $primary-color-dark;
 }
 
 .wrapper {
@@ -28,59 +30,44 @@ html, body {
   width: 88px;
   height: 100vh;
   padding-top: 6rem;
-  @include shade.light-large-shade;
+  @include shade.dark-large-shade;
 
-  & .item {
+  & a {
     transition: all 0.3s;
     margin: 1rem;
     margin-top: 2rem;
-    @include shade.light-button;
+    @include shade.dark-button;
   }
   
-  & .item:hover {
-    @include shade.light-button-hover;
+  & a:hover {
+    @include shade.dark-button-hover;
   }
 
-  & .item:target {
+  & a:focus {
    @include shade.dark-button-clicked;
   }
+  
 
-  & .item img {
+  & a img {
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
   }
 
-  & img.dots {
+  & .dots {
    top: 40%;
   }
 
-  & img.color-wheel {
+  & .color-drop {
     top: 55%;
   }
 
-  & img.shapes {
+  & .shapes {
     top: 55%;
+ 
   }
-}
-
-.shapes-wrapper {
-  width: 0;
-  & .tool-test {
-    position: absolute;
-    top: 30rem;
-    left: 10rem;
-    padding: 1rem;
-    border-radius: 8px;
-    background-color: $primary-color-light;
-    @include shade.light-button-hover;
-  }
-
-  & .item {
-    margin: 2rem 0.5rem;
-  }
-
+  
 }
 
 main {
@@ -89,18 +76,19 @@ main {
 
 .logo {
   width: calc(100% - 88px);
-  margin: 2rem 0 0 2rem;
+  margin: 2rem 0 0 3rem;
+  
 }
 
 .mycanvas {
-  width: calc(100% - 88px);
+  width: calc(100% + 88px);
   display: flex;
   flex-direction: column;
   align-items: center
 }
 
 #my-canvas {
-  @include shade.light-large-shade;
+  @include shade.dark-large-shade;
   border-radius: 16px;
 }
 
@@ -109,6 +97,8 @@ main {
   max-width: 900px;
   height: 200px;
 }
+
+
 
 
   
