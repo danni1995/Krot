@@ -21,7 +21,7 @@ html, body {
   height: 100vh;
   padding-top: 6rem;
   background-color: #f2f2f2;
-  box-shadow: -20px -20px 45px #ffffff, 20px 20px 45px #11131616;
+  box-shadow: -20px -20px 45px #ffffff, 20px 20px 45px #11131626;
 }
 .toolbar .item {
   transition: all 0.3s;
@@ -56,22 +56,17 @@ html, body {
   top: 55%;
 }
 
-.shapes-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 .shapes-wrapper .tool-test {
   position: relative;
-  left: 5rem;
-  padding: 0.5rem;
+  top: 30rem;
+  left: 4rem;
+  padding: 1rem;
   border-radius: 8px;
   background-color: #f2f2f2;
   box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131626;
 }
 .shapes-wrapper .item {
-  margin: 2rem 1rem;
+  margin: 2rem 0.5rem;
 }
 
 main {
@@ -80,11 +75,11 @@ main {
 
 .logo {
   width: calc(100% - 88px);
-  margin: 1rem 0 0 1rem;
+  margin: 2rem 0 0 0rem;
 }
 
 .mycanvas {
-  width: calc(100% + 88px);
+  width: calc(100% - 88px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,7 +87,7 @@ main {
 
 #my-canvas {
   background-color: #f2f2f2;
-  box-shadow: -20px -20px 45px #ffffff, 20px 20px 45px #11131616;
+  box-shadow: -20px -20px 45px #ffffff, 20px 20px 45px #11131626;
   border-radius: 16px;
 }
 
