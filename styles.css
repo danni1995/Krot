@@ -26,20 +26,20 @@ light mode*/
 }
 
 html, body {
-  height: 100%;
+  height: 100vh;
   background-color: #33363D;
 }
 
 .wrapper {
   display: flex;
-  height: 100%;
+  height: 100vh;
   margin: auto;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .toolbar {
   width: 88px;
-  height: 100%;
+  height: 100vh;
   padding-top: 4rem;
   background-color: #33363D;
   box-shadow: -23px -23px 50px #3B3C41, 28px 28px 45px #11131660;
@@ -87,7 +87,7 @@ main {
   margin: 2rem 0 0 3rem;
 }
 
-.canvas {
+.mycanvas {
   width: calc(100% - 88px);
   display: flex;
   flex-direction: column;
@@ -98,8 +98,6 @@ main {
   background-color: #33363D;
   box-shadow: -23px -23px 50px #3B3C41, 28px 28px 45px #11131660;
   border-radius: 16px;
-  height: 90%;
-  width: 80%;
 }
 
 #img-data-div {
