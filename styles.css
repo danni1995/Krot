@@ -56,10 +56,13 @@ html, body {
   top: 55%;
 }
 
+.shapes-wrapper {
+  width: 0;
+}
 .shapes-wrapper .tool-test {
-  position: relative;
+  position: absolute;
   top: 30rem;
-  left: 4rem;
+  left: 10rem;
   padding: 1rem;
   border-radius: 8px;
   background-color: #f2f2f2;
@@ -75,7 +78,7 @@ main {
 
 .logo {
   width: calc(100% - 88px);
-  margin: 2rem 0 0 0rem;
+  margin: 2rem 0 0 2rem;
 }
 
 .mycanvas {

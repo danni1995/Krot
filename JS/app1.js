@@ -23,13 +23,13 @@ document.querySelectorAll("[data-tool]").forEach(
             let selectedTool = item.getAttribute("data-tool");
             paint.activeTool = selectedTool;
 
-            // switch (selectedTool) { // if the tool shapes is selected then the triangle, circle and rectangle tools will pop up.
-            //     case TOOL_SHAPES:
-            //         document.querySelector(".shapes-wrapper").style.display = "block";
-            //         break;
-            // default:
-            //     document.querySelector(".shapes-wrapper").style.display = "none";
-            // }
+            switch (selectedTool) { // if the tool shapes is selected then the triangle, circle and rectangle tools will pop up.
+                case TOOL_SHAPES:
+                    document.querySelector(".shapes-wrapper").style.display = "block";
+                    break;
+            default:
+                document.querySelector(".shapes-wrapper").style.display = "none";
+            }
 
         });
     }

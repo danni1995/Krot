@@ -66,11 +66,11 @@ html, body {
 }
 
 .shapes-wrapper {
-  
+  width: 0;
   & .tool-test {
-    position: relative;
+    position: absolute;
     top: 30rem;
-    left: 4rem;
+    left: 10rem;
     padding: 1rem;
     border-radius: 8px;
     background-color: $primary-color-light;
@@ -89,7 +89,7 @@ main {
 
 .logo {
   width: calc(100% - 88px);
-  margin: 2rem 0 0 0rem;
+  margin: 2rem 0 0 2rem;
 }
 
 .mycanvas {
