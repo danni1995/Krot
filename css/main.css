@@ -6,7 +6,6 @@
 
 html, body {
   height: 100vh;
-  background-color: #f2f2f2;
 }
 
 .wrapper {
@@ -20,25 +19,15 @@ html, body {
   width: 88px;
   height: 100vh;
   padding-top: 6rem;
-  background-color: #f2f2f2;
-  box-shadow: -20px -20px 45px #ffffff, 20px 20px 45px #11131626;
 }
 .toolbar .item {
+  height: 48px;
+  width: 48px;
+  border-radius: 60px;
+  display: block;
   transition: all 0.3s;
   margin: 1rem;
   margin-top: 2rem;
-  height: 48px;
-  width: 48px;
-  background-color: #f2f2f2;
-  box-shadow: -5px -5px 10px #ffffff, -5px -5px 10px #ffffff, 5px 5px 10px #11131626;
-  border-radius: 60px;
-  display: block;
-}
-.toolbar .item:hover {
-  box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131626;
-}
-.toolbar .item:target {
-  box-shadow: -5px -5px 10px #40414550 inset, 5px 5px 10px #11131650 inset;
 }
 .toolbar .item img {
   position: relative;
@@ -65,8 +54,6 @@ html, body {
   left: 10rem;
   padding: 1rem;
   border-radius: 8px;
-  background-color: #f2f2f2;
-  box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131626;
 }
 .shapes-wrapper .item {
   margin: 2rem 0.5rem;
@@ -78,6 +65,8 @@ main {
 
 .logo {
   width: calc(100% - 88px);
+  height: 100px;
+  background-repeat: no-repeat;
   margin: 2rem 0 0 2rem;
 }
 
@@ -89,8 +78,6 @@ main {
 }
 
 #my-canvas {
-  background-color: #f2f2f2;
-  box-shadow: -20px -20px 45px #ffffff, 20px 20px 45px #11131626;
   border-radius: 16px;
 }
 
@@ -100,4 +87,15 @@ main {
   height: 200px;
 }
 
-/*# sourceMappingURL=styles.css.map */
+
+#darklight-toggle {
+  height: 48px;
+  width: 48px;
+  border-radius: 30px;
+  display: block;
+  transition: all 0.3s;
+  margin: 1rem;
+  margin-top: 2rem;
+  border: none;
+}
+

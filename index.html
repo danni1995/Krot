@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/styles-dark-theme.scss">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/dark.css">
+    <link rel="stylesheet" href="css/light.css">
     <script src="JS/app1.js" type="module" defer></script>
     <title>Krot - Drawing App</title>
   </head>
@@ -14,6 +15,7 @@
 
       <aside class="toolbar"> <!--TOOLBAR START-->
 
+        
         <!--PEN TOOL-->
         <div class="item" data-tool="pen" title="Pen Tool">
           <img src="Toolbar/Icons/darkm pen.svg" alt="pen tool"/>
@@ -53,7 +55,9 @@
         <div class="item" data-tool="dots" title="Dots">
           <img class="dots" src="/Toolbar/Icons/darkm dots.svg" alt="dots"/>
         </div>
-
+        <div class="">
+          <button id="darklight-toggle">Jóble</button>
+        </div>
       </aside> <!--TOOLBAR END-->
 
       <div class="shapes-wrapper" style="display: block;"> <!--SHAPES WRAPPER START-->
@@ -62,25 +66,24 @@
         <div class="item" data-tool="rectangle" title="rectangle Tool">
           <img src="Toolbar/Icons/darkm rectangle.svg" alt="rectangle" />
         </div>
-
+        
         <!--CIRCLE TOOL-->
         <div class="item" data-tool="circle" title="circle Tool">
           <img src="Toolbar/Icons/darkm ellipse.svg" alt="circle" />
         </div>
-
+        
         <!--TRIANGLE TOOL-->
         <div class="item" data-tool="triangle" title="triangle Tool">
           <img src="Toolbar/Icons/darkm polygon.svg" alt="triangle" />
         </div>
-        </div>
-      </div> <!--SHAPES WRAPPER END-->
-
-      <main>
-
-        <!--LOGO-->
-        <div class="logo">
-          <img src="logo/logo.svg" alt="LOGO" />
-        </div>
+      </div>
+    </div> <!--SHAPES WRAPPER END-->
+    
+    <main>
+      
+      <!--LOGO-->
+      <div class="logo">
+      </div>
 
         <!--CANVAS-->
         <div class="mycanvas">
