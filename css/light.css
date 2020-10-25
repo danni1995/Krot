@@ -2,14 +2,13 @@
   background-color: #f2f2f2;
 }
 
-
-
 .light .toolbar {
     background-color: #f2f2f2;
     box-shadow:  
     -23px -23px 50px #ffffff, 
      15px  15px 45px #11131626;
   }
+
   .light .toolbar .item {
     background-color: #f2f2f2;
     box-shadow: 
@@ -24,15 +23,12 @@
        9px  9px 16px #11131626;
   }
   
-  .light .toolbar .clicked {
-  box-shadow: 
-    -5px -5px 10px #ffffff inset, 
-      5px  5px 10px #11131616 inset;
-      /* box-shadow: 
-      -8px -4px 8px #ffffff,
-      8px  4px 12px #11131616,
-      4px  4px 4px #11131616 inset,
-      -4px -4px 4px #ffffff inset; */
+  .light .toolbar .item.clicked {
+    box-shadow: 
+      -8px -8px 8px #ffffff,
+       8px  8px 8px #11131616,
+      -4px -4px 4px #ffffff inset, 
+       4px  4px 4px #11131616 inset;
   }
 
   .light .color-wheel.clicked  {
@@ -63,7 +59,7 @@
   .light .shapes-wrapper .item:hover {
     box-shadow: 
       -9px -9px 16px #ffffff, 
-      9px  9px 16px #11131626;
+       9px  9px 16px #11131626;
   }
 
   .light #my-canvas {

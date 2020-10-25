@@ -8,6 +8,7 @@
     15px  15px 45px 0px #11131660, 
    -23px -23px 50px 0px #3B3C41;
 }
+
 .dark .toolbar .item {
   background-color: #33363D;
   box-shadow: 
@@ -15,19 +16,23 @@
     -5px -5px 10px #3b3c41, 
      5px  5px 10px #11131650;
 }
+
 .dark .toolbar .item:hover {
   box-shadow: 
     -9px -9px 16px #3b3c41, 
      9px  9px 16px #11131650;
 }
+
 .dark .toolbar .item.clicked {
   box-shadow: 
-    -5px -5px 10px #40414550 inset, 
-     5px  5px 10px #11131650 inset;
+    -8px -4px 8px #40414550,
+     8px  4px 12px #11131650,
+    -4px -4px 4px #40414550 inset,
+     4px  4px 4px #11131650 inset;
 }
 
 .dark .pen {
-  background-image: url(../Toolbar/Icons/darkm-pen.svg);
+  background-image: url("../Toolbar/Icons/darkm-pen.svg");
 }
 
 .dark .tool-test {
@@ -65,7 +70,7 @@
 }
 
 .dark .logo {
-  background-image: url(../logo/dark-logo.svg);
+  background-image: url("../logo/dark-logo.svg");
 }
 
 .dark #darklight-toggle {
