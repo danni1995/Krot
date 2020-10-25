@@ -1,4 +1,4 @@
-
+// Here we define variables for the tools
 export const TOOL_PEN = "pen";
 export const TOOL_ERASER = "eraser";
 export const TOOL_BUCKET = "bucket";
