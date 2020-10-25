@@ -49,6 +49,7 @@ export default class Paint { // Here we have a class called Paint. This class is
 
             case TOOL_SHAPES_RECTANGLE: // In case the specified tool is selected, then ...
             case TOOL_SHAPES_CIRCLE:
+            case TOOL_SHAPES_TRIANGLE:
                 this.drawShape(); // we call upon the function drawShape and that code will occur. All three shapes use drawShape()
                 break;
             default:
@@ -78,6 +79,11 @@ export default class Paint { // Here we have a class called Paint. This class is
             // To do that we need to use the distance formula (ugh math)
             let distance = findDistance(this.startPos, this.currentPos);
             this.context.arc(this.startPos.x, this.startPos.y, distance, 0, 2 * Math.PI, false);
+        }else if (this.tool === TOOL_SHAPES_TRIANGLE) {
+            this.context.moveTo(this.startPos.x + (this.currentPos.x - this.startPos.x) / 2, this.startPos.y);
+            this.context.lineTo(this.startPos.x, this.currentPos.y);
+            this.context.lineTo(this.currentPos.x, this.currentPos.y);
+            this.context.closePath();
         }
 
         this.context.stroke();
