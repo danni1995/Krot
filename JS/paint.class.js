@@ -29,6 +29,8 @@ export default class Paint { // Here we have a class called Paint. This class is
     // ON MOUSE DOWN
     onMouseDown(e) { // This is a method. When the mouse is down this executes.
 
+        this.savedData = this.context.getImageData(0, 0, this.canvas.clientWidth, this.canvas.clientHeight); // veriable that saves the image data from when mouse goes down.
+
         this.canvas.onmousemove = e => this.onMouseMove(e); // MouseMove will execute as well as long as the mouse is down (kind of like dragging)
         document.onmouseup = e => this.onMouseUp(e); // Mouse up will execute and will make everything stop
 
@@ -45,8 +47,9 @@ export default class Paint { // Here we have a class called Paint. This class is
         // DRAWING SHAPES
         switch(this.tool){
 
-            case TOOL_SHAPES_RECTANGLE: // If this tool is selected 
-                this.drawShape(); // we call upon the function drawShape and that code will occur.
+            case TOOL_SHAPES_RECTANGLE: // In case the specified tool is selected, then ...
+            case TOOL_SHAPES_CIRCLE:
+                this.drawShape(); // we call upon the function drawShape and that code will occur. All three shapes use drawShape()
                 break;
             default:
                 break;
@@ -64,6 +67,20 @@ export default class Paint { // Here we have a class called Paint. This class is
     // DRAW SHAPE FUNCTION
     drawShape() {
 
+        this.context.putImageData(this.savedData, 0, 0); // Puts the image data (from getImageData) back onto the canvas
+
+        this.context.beginPath(); // we use the method beginPath to Begin a path, we want this for all shapes.
+
+        if(this.tool === TOOL_SHAPES_RECTANGLE) {
+            this.context.rect(this.startPos.x, this.startPos.y, this.currentPos.x - this.startPos.x, this.currentPos.y - this.startPos.y); // (starting position x value, starting position y value, calculate with, calculate height)
+        }else if (this.tool === TOOL_SHAPES_CIRCLE) {
+            // To draw the circle we need to use arc(). It requires us to calculculate the distance between the starting point to the end point. 
+            // To do that we need to use the distance formula (ugh math)
+            let distance = 10;
+            this.context.arc(this.startPos.x, this.startPos.y, distance, 0, 2 * Math.PI, false);
+        }
+
+        this.context.stroke();
 
     }
 }
