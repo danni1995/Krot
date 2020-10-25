@@ -5,10 +5,7 @@ import {TOOL_BUCKET, TOOL_COLORWHEEL, TOOL_DOTS, TOOL_ERASER, TOOL_EYEDROP, TOOL
 
 let paint = new Paint('my-canvas');
 paint.activeTool = TOOL_PEN;
-
-
-var canvas = document.getElementById("my-canvas");
-var ctx = canvas.getContext("2d");
+paint.init();
 
 // YOUTUBE TUTORIAL https://youtu.be/XjJh0q2dBNo?t=744 HELP
 

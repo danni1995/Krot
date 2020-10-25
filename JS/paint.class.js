@@ -1,10 +1,20 @@
 export default class Paint {
 
+    constructor(canvasID) {
+
+        this.canvas = document.getElementById(canvasID);
+        this.context = canvas.getContext("2d");
+        
+    }
+
     set activeTool(tool) {
         this.tool = tool;
         console.log(this.tool);
     }
 
+    init(){
+        this.canvas.onmousedown = e => this.onMouseDown(e);
+    }
 
     onMouseDown(e) {
 
