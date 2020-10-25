@@ -45,10 +45,25 @@
        9px  9px 16px #11131626;
   }
 
-  .light .tool-test .item.clicked {
+  .light .shapes-wrapper .item {
+    height: 48px;
+    width: 48px;
+    border-radius: 60px;
+    display: block;
+    transition: all 0.3s;
+  }
+  
+  .light .shapes-wrapper img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .light .shapes-wrapper .item:hover {
     box-shadow: 
-      -5px -5px 10px #ffffff inset, 
-       5px  5px 10px #11131616 inset;
+      -9px -9px 16px #ffffff, 
+      9px  9px 16px #11131626;
   }
 
   .light #my-canvas {
@@ -68,10 +83,10 @@
 
 
   .light .toggle {
+    background: linear-gradient(0.25turn, #0d2750, #f2f2f2, #f2f2f2);
     box-shadow:
     -8px -4px 8px #ffffff,
      8px  4px 12px #11131626;
-     background: linear-gradient(0.25turn, #0d2750, #f2f2f2, #f2f2f2);
     
   }
 
