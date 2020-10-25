@@ -25,9 +25,7 @@ let paint = new Paint('my-canvas');
 paint.activeTool = TOOL_PEN;
 paint.init();
 
-var canvas = document.getElementById("my-canvas");
-var ctx = canvas.getContext("2d");
-
+// YOUTUBE TUTORIAL https://youtu.be/XjJh0q2dBNo?t=744 HELP
 
 /* Here we select all the tools by finding them in the html with "[data-tool]".
 Then we add an event listener "click" to select each tool */
