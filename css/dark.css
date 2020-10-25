@@ -1,0 +1,32 @@
+.dark body {
+  background-color: #33363D;
+}
+
+.dark .toolbar {
+  background-color: #33363d;
+  box-shadow: 15px 15px 45px 0px #11131660, -23px -23px 50px 0px #3B3C41;
+}
+.dark .toolbar .item {
+  background-color: #33363D;
+  box-shadow: -5px -5px 10px #3b3c41, -5px -5px 10px #3b3c41, 5px 5px 10px #11131650;
+}
+.dark .toolbar .item:hover {
+  box-shadow: -9px -9px 16px #3b3c41, 9px 9px 16px #11131650;
+}
+.dark .toolbar .item.clicked {
+  box-shadow: -5px -5px 10px #40414550 inset, 5px 5px 10px #11131650 inset;
+}
+
+.dark #my-canvas {
+  background-color: #33363D;
+  box-shadow: -23px -23px 50px #3B3C41, 28px 28px 45px #11131660;
+}
+
+.dark .logo {
+  background-image: url(../logo/dark-logo.svg);
+}
+
+
+#darklight-toggle {
+  background-color: #33363D;
+}
