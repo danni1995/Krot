@@ -17,6 +17,10 @@
   box-shadow: -5px -5px 10px #40414550 inset, 5px 5px 10px #11131650 inset;
 }
 
+.dark .tool-test {
+  box-shadow: -9px -9px 16px #3b3c41, 9px 9px 16px #11131650;
+}
+
 .dark #my-canvas {
   background-color: #33363D;
   box-shadow: -23px -23px 50px #3B3C41, 28px 28px 45px #11131660;

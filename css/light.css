@@ -13,6 +13,8 @@
     box-shadow: -5px -5px 10px #ffffff, -5px -5px 10px #ffffff, 5px 5px 10px #11131626;
   }
 
+
+
   .light .toolbar .item:hover {
     box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131626;
   }
@@ -20,6 +22,10 @@
     box-shadow: -5px -5px 10px #ffffff inset, 5px 5px 10px #11131616 inset;
   }
   
+  .light .tool-test {
+    box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131626;
+  }
+
   .light #my-canvas {
     background-color: #f2f2f2;
     box-shadow: -20px -20px 45px #ffffff, 20px 20px 45px #11131626;
