@@ -13,15 +13,17 @@
     box-shadow: -5px -5px 10px #ffffff, -5px -5px 10px #ffffff, 5px 5px 10px #11131626;
   }
 
-
-
   .light .toolbar .item:hover {
     box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131626;
   }
   .light .toolbar .clicked {
     box-shadow: -5px -5px 10px #ffffff inset, 5px 5px 10px #11131616 inset;
   }
-  
+
+  .light .toolbar .color-wheel.clicked {
+    background-image: url(../Toolbar/Icons/color-wheel-solid.svg);
+  }
+  gi
   .light .tool-test {
     box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131626;
   }
