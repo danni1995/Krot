@@ -1,6 +1,6 @@
 import Point from './point.model.js';
 import {TOOL_BUCKET, TOOL_COLORWHEEL, TOOL_DOTS, TOOL_ERASER, TOOL_EYEDROP, TOOL_PEN, TOOL_SHAPES, TOOL_SHAPES_CIRCLE, TOOL_SHAPES_RECTANGLE, TOOL_SHAPES_TRIANGLE, TOOL_TEXT} from './tool.js';
-import { getMouseLocationOnCanvas } from './utility.js';
+import { findDistance, getMouseLocationOnCanvas } from './utility.js';
 
 export default class Paint { // Here we have a class called Paint. This class is exported into app1.js.
 
@@ -76,7 +76,7 @@ export default class Paint { // Here we have a class called Paint. This class is
         }else if (this.tool === TOOL_SHAPES_CIRCLE) {
             // To draw the circle we need to use arc(). It requires us to calculculate the distance between the starting point to the end point. 
             // To do that we need to use the distance formula (ugh math)
-            let distance = 10;
+            let distance = findDistance(this.startPos, this.currentPos);
             this.context.arc(this.startPos.x, this.startPos.y, distance, 0, 2 * Math.PI, false);
         }
 
