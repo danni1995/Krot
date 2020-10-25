@@ -35,6 +35,14 @@
     background-image: url("../Toolbar/Icons/color-wheel-solid.png");
   } 
 
+  .light .toolbar .item .dark {
+    display: none; 
+  }
+
+  .light .shapes-wrapper .item .dark{
+    display: none;
+  }
+
   .light .tool-test {
     box-shadow: 
       -9px -9px 16px #ffffff, 
