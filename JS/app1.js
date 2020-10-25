@@ -22,13 +22,18 @@ import {TOOL_BUCKET, TOOL_COLORWHEEL, TOOL_DOTS, TOOL_ERASER, TOOL_EYEDROP, TOOL
 
 
 let paint = new Paint('my-canvas');
-paint.activeTool = TOOL_PEN; // default choosen tool
-paint.init(); // 
+paint.activeTool = TOOL_PEN;
+paint.init();
+
+var canvas = document.getElementById("my-canvas");
+var ctx = canvas.getContext("2d");
+
 
 /* Here we select all the tools by finding them in the html with "[data-tool]".
 Then we add an event listener "click" to select each tool */
 document.querySelectorAll("[data-tool]").forEach(
     item => {
+        console.log("asdf")
         item.addEventListener("click", e =>{
 
             document.querySelector("[data-tool].clicked").classList.toggle("clicked"); // remove the class "clicked" from last used tool
@@ -37,7 +42,7 @@ document.querySelectorAll("[data-tool]").forEach(
             let selectedTool = item.getAttribute("data-tool");
             paint.activeTool = selectedTool;
 
-            switch (selectedTool) { // if the tool 'shapes' is selected then the 'triangle', 'circle' and 'rectangle' tools will pop up.
+            switch (selectedTool) { // if the tool shapes is selected then the triangle, circle and rectangle tools will pop up.
                 case TOOL_SHAPES:
                     document.querySelector(".shapes-wrapper").style.display = "block";
                     break;

@@ -6,6 +6,7 @@
 
 html, body {
   height: 100vh;
+  cursor: pointer;
 }
 
 .wrapper {
@@ -28,6 +29,7 @@ html, body {
   transition: all 0.3s;
   margin: 1rem;
   margin-top: 2rem;
+  
 }
 .toolbar .item img {
   position: relative;
@@ -35,12 +37,15 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .toolbar img.dots {
   top: 40%;
 }
+
 .toolbar img.color-wheel {
   top: 55%;
 }
+
 .toolbar img.shapes {
   top: 55%;
 }
@@ -64,14 +69,14 @@ main {
 }
 
 .logo {
-  width: calc(100% - 88px);
+  width: calc(100% - 90px);
   height: 100px;
   background-repeat: no-repeat;
   margin: 2rem 0 0 2rem;
 }
 
 .mycanvas {
-  width: calc(100% - 88px);
+  width: calc(100% - 90px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,15 +92,35 @@ main {
   height: 200px;
 }
 
-
-#darklight-toggle {
-  height: 48px;
-  width: 48px;
-  border-radius: 30px;
-  display: block;
-  transition: all 0.3s;
-  margin: 1rem;
-  margin-top: 2rem;
-  border: none;
+.label {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 6rem;
 }
 
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.toggle-state {
+  display: none;
+}
+
+.indicator {
+  height: 20px;
+  width: 20px;
+  border-radius: 16px;
+  transform: translate3d(75%, 0, 0);
+  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+}
+
+.toggle-state:checked ~ .indicator {
+  transform: translate3d(-75%, 0, 0);
+}

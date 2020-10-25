@@ -18,7 +18,7 @@
         
         <!--PEN TOOL-->
         <div class="item" data-tool="pen" title="Pen Tool">
-          <img src="Toolbar/Icons/darkm pen.svg" alt="pen tool"/>
+          <img  class="pen" src="Toolbar/Icons/darkm-pen.svg" alt="pen tool"/>
         </div>
 
         <!--ERASER TOOL-->
@@ -55,9 +55,15 @@
         <div class="item" data-tool="dots" title="Dots">
           <img class="dots" src="/Toolbar/Icons/darkm dots.svg" alt="dots"/>
         </div>
-        <div class="">
-          <button id="darklight-toggle">Jóble</button>
-        </div>
+        
+        <!--LIGHT TO DARK MODE TOGGLE-->
+        <label class="label">
+          <div class="toggle">
+            <input class="toggle-state" id="darklight-toggle" type="checkbox" name="check" value="check" />
+            <div class="indicator"></div>
+          </div>
+        </label>
+
       </aside> <!--TOOLBAR END-->
 
       <div class="shapes-wrapper" style="display: block;"> <!--SHAPES WRAPPER START-->

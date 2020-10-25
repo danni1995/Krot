@@ -6,37 +6,77 @@
 
 .light .toolbar {
     background-color: #f2f2f2;
-    box-shadow:  -23px -23px 50px 0px #ffffff, 15px 15px 45px 0px #11131626;
+    box-shadow:  
+    -23px -23px 50px #ffffff, 
+     15px  15px 45px #11131626;
   }
   .light .toolbar .item {
     background-color: #f2f2f2;
-    box-shadow: -5px -5px 10px #ffffff, -5px -5px 10px #ffffff, 5px 5px 10px #11131626;
+    box-shadow: 
+      -5px -5px 10px #ffffff, 
+      -5px -5px 10px #ffffff, 
+       5px  5px 10px #11131626;
   }
 
   .light .toolbar .item:hover {
-    box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131626;
+    box-shadow: 
+      -9px -9px 16px #ffffff, 
+       9px  9px 16px #11131626;
   }
+  
   .light .toolbar .clicked {
-    box-shadow: -5px -5px 10px #ffffff inset, 5px 5px 10px #11131616 inset;
+  box-shadow: 
+    -5px -5px 10px #ffffff inset, 
+      5px  5px 10px #11131616 inset;
+      /* box-shadow: 
+      -8px -4px 8px #ffffff,
+      8px  4px 12px #11131616,
+      4px  4px 4px #11131616 inset,
+      -4px -4px 4px #ffffff inset; */
   }
 
-  .light .toolbar .color-wheel.clicked {
-    background-image: url(../Toolbar/Icons/color-wheel-solid.svg);
-  }
-  gi
+  .light .color-wheel.clicked  {
+    background-image: url("../Toolbar/Icons/color-wheel-solid.png");
+  } 
+
   .light .tool-test {
-    box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px #11131626;
+    box-shadow: 
+      -9px -9px 16px #ffffff, 
+       9px  9px 16px #11131626;
+  }
+
+  .light .tool-test .item.clicked {
+    box-shadow: 
+      -5px -5px 10px #ffffff inset, 
+       5px  5px 10px #11131616 inset;
   }
 
   .light #my-canvas {
     background-color: #f2f2f2;
-    box-shadow: -20px -20px 45px #ffffff, 20px 20px 45px #11131626;
+    box-shadow: 
+     -20px -20px 45px #ffffff, 
+      20px  20px 45px #11131626;
   }
   
   .light .logo {
-    background-image: url(../logo/light-logo.svg);
+    background-image: url("../logo/light-logo.svg");
   }
 
   .light #darklight-toggle {
       background-color: #f2f2f2;
   }
+
+
+  .light .toggle {
+    box-shadow:
+    -8px -4px 8px #ffffff,
+     8px  4px 12px #11131626;
+     background: linear-gradient(0.25turn, #0d2750, #f2f2f2, #f2f2f2);
+    
+  }
+
+    .light .indicator {
+      box-shadow:
+        -5px -5px 10px #ffffff inset,
+         5px  5px 10px #11131626 inset;
+    }
