@@ -36,6 +36,11 @@ export default class Paint { // Here we have a class called Paint. This class is
 
         this.startPos = getMouseLocationOnCanvas(e, this.canvas); // we make a property called startPos that uses the function getMouseLocation inside utility.js
         console.log(this.startPos); // can be removed, just checking if it works
+
+        if(this.tool === TOOL_PEN) {
+            this.context.beginPath();
+            this.context.moveTo(this.startPos.x, this.startPos.y);
+        }
     }
 
 
@@ -51,6 +56,9 @@ export default class Paint { // Here we have a class called Paint. This class is
             case TOOL_SHAPES_CIRCLE:
             case TOOL_SHAPES_TRIANGLE:
                 this.drawShape(); // we call upon the function drawShape and that code will occur. All three shapes use drawShape()
+                break;
+            case TOOL_PEN:
+                this.drawFreeLine();
                 break;
             default:
                 break;
@@ -77,7 +85,7 @@ export default class Paint { // Here we have a class called Paint. This class is
         }else if (this.tool === TOOL_SHAPES_CIRCLE) {
             // To draw the circle we need to use arc(). It requires us to calculculate the distance between the starting point to the end point. 
             // To do that we need to use the distance formula (ugh math)
-            let distance = findDistance(this.startPos, this.currentPos);
+            let distance = findDistance(this.startPos, this.currentPos); // This function is inside utility.js and calculates the distance
             this.context.arc(this.startPos.x, this.startPos.y, distance, 0, 2 * Math.PI, false);
         }else if (this.tool === TOOL_SHAPES_TRIANGLE) {
             this.context.moveTo(this.startPos.x + (this.currentPos.x - this.startPos.x) / 2, this.startPos.y);
@@ -89,4 +97,10 @@ export default class Paint { // Here we have a class called Paint. This class is
         this.context.stroke();
 
     }
+
+    drawFreeLine() {
+        this.context.lineTo(this.currentPos.x, this.currentPos.y);
+        this.context.stroke();
+    }
 }
+
