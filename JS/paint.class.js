@@ -41,9 +41,9 @@ export default class Paint { // Here we have a class called Paint. This class is
 
         this.startPos = getMouseLocationOnCanvas(e, this.canvas); // we make a property called startPos that uses the function getMouseLocation inside utility.js
 
-        if(this.tool === TOOL_PEN) {
-            this.context.beginPath();
-            this.context.moveTo(this.startPos.x, this.startPos.y);
+        if(this.tool === TOOL_PEN) { // If the mose is down and the tool selected is the pen tool
+            this.context.beginPath(); // then begin a new path
+            this.context.moveTo(this.startPos.x, this.startPos.y); 
         } else if(this.tool === TOOL_BUCKET) {
             new Fill(this.canvas, this.startPos, this.color);
         }
@@ -62,8 +62,8 @@ export default class Paint { // Here we have a class called Paint. This class is
             case TOOL_SHAPES_TRIANGLE:
                 this.drawShape(); // we call upon the function drawShape and that code will occur. All three shapes use drawShape()
                 break;
-            case TOOL_PEN:
-                this.drawFreeLine();
+            case TOOL_PEN: // If the mouse is moving while its down
+                this.drawFreeLine(); // Then do drawFreeLine();
                 break;
             default:
                 break;
@@ -100,13 +100,13 @@ export default class Paint { // Here we have a class called Paint. This class is
         }
 
         this.context.stroke();
-        this.context.lineWidth = 3; 
+        this.context.lineWidth = 10; // This line of code controls the linewidth for the shapes
     }
 
-    drawFreeLine() {
-        this.context.lineTo(this.currentPos.x, this.currentPos.y);
-        this.context.stroke();
-        this.context.lineWidth = 3; 
+    drawFreeLine() { // For the pen tool
+        this.context.lineTo(this.currentPos.x, this.currentPos.y); // make a line to the current position
+        this.context.stroke(); // Make a stroke baby
+        this.context.lineWidth = 10; // Then make the stroke thick baby
     }
 }
 

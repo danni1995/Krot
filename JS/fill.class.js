@@ -1,33 +1,34 @@
 import Point from "./point.model.js";
 import Paint from "./paint.class.js";
 
-export default class Fill {
+// This file is only for the bucket tool. Found an algorithm to make the fill happen. Its not the fastest but it works!
+export default class Fill { // Name of the class
 
     constructor(canvas, point, color) {
-        this.context = canvas.getContext("2d");
+        this.context = canvas.getContext("2d"); // Here we set the context to 2d, it provides the 2D rendering context for the drawing surface of the <canvas> element.
 
-        this.imageData = this.context.getImageData(0,0, this.context.canvas.width, this.context.canvas.height);
+        this.imageData = this.context.getImageData(0,0, this.context.canvas.width, this.context.canvas.height); // veriable that saves the image data when the bucket is used
 
-        const targetColor = this.getPixel(point);
+        const targetColor = this.getPixel(point); // targetColor is the color that is on the canvas before we use the bucket.
 
-        const fillColor = this.hexToRgba(color);
+        const fillColor = this.hexToRgba(color); // fillColor is the color we want to replace the targetColor
 
-        this.fillStack = [];
+        this.fillStack = []; // Empty arrray
 
-        this.floodFill(point, targetColor, fillColor);
+        this.floodFill(point, targetColor, fillColor); // floodFill has the arguments of point, targetColor and fillColor
 
         this.fillColor();
 
 
     }
 
-    floodFill(point, targetColor, fillColor) {
-        if (this.colorMatch(targetColor, fillColor)) return;
+    floodFill(point, targetColor, fillColor) { // Here is the floodFill Algorithm that allows up to fill up an area as long as the currentColor and targetColor match. 
+        if (this.colorMatch(targetColor, fillColor)) return; // If the same color is on the canvas as the one your trying to fill, return. nothing happens. (example: cant fill something with white if it is already white)
 
-        const currentColor = this.getPixel(point);
+        const currentColor = this.getPixel(point); // currentColor is the same as targetColor. 
 
-        if(this.colorMatch(currentColor, targetColor)) {
-            this.setPixel(point, fillColor);
+        if(this.colorMatch(currentColor, targetColor)) { // If the currentColor and targetColor is the same, then the algorithm will shoot off!
+            this.setPixel(point, fillColor); 
 
             this.fillStack.push([new Point(point.x + 1, point.y), targetColor, fillColor]);
             this.fillStack.push([new Point(point.x - 1, point.y), targetColor, fillColor]);
@@ -38,26 +39,25 @@ export default class Fill {
     }
 
     fillColor() {
-        if(this.fillStack.length) {
+        if(this.fillStack.length) { 
 
-            let range = this.fillStack.length;
-            console.log('range', range);
+            let range = this.fillStack.length; // veriable range is the fillstack lenght
 
-            for(let i = 0; i < range; i++) {
+            for(let i = 0; i < range; i++) { // For loop that continues on until i is bigger than fillstack lenght.
                 this.floodFill(this.fillStack[i][0], this.fillStack[i][1], this.fillStack[i][2]);
             }
 
-            this.fillStack.splice(0, range);
+            this.fillStack.splice(0, range); // Then it adds everything into the array ( the emty one above)
 
-            this.fillColor();
+            this.fillColor(); 
         } else{
-            this.context.putImageData(this.imageData, 0, 0);
-            this.fillStack = [];
+            this.context.putImageData(this.imageData, 0, 0); // Else store image data
+            this.fillStack = []; // Reset fillStack to nothing
         }
     }
 
-    getPixel(point) {
-        if(point.x < 0 || point.y < 0 || point.x >= this.imageData.width, point.y >= this.imageData.height) {
+    getPixel(point) { // This gets the pixel color information in rgba
+        if(point.x < 0 || point.y < 0 || point.x >= this.imageData.width, point.y >= this.imageData.height) { 
             return [-1, -1, -1, -1]; // impossible color
         } else {
             const offset = (point.y * this.imageData.width + point.x) * 4;
