@@ -1,0 +1,97 @@
+.dark body {
+  background-color: #33363D;
+}
+
+.dark .toolbar {
+  background-color: #33363d;
+  box-shadow: 
+    15px  15px 45px 0px #11131660, 
+   -23px -23px 50px 0px #3B3C41;
+}
+
+.dark .toolbar .item {
+  background-color: #33363D;
+  box-shadow: 
+    -5px -5px 10px #3b3c41, 
+    -5px -5px 10px #3b3c41, 
+     5px  5px 10px #11131650;
+}
+
+.dark .toolbar .item:hover {
+  box-shadow: 
+    -9px -9px 16px #3b3c41, 
+     9px  9px 16px #11131650;
+}
+
+.dark .toolbar .item.clicked {
+  box-shadow: 
+    -8px -4px 8px #40414550,
+     8px  4px 12px #11131650,
+    -4px -4px 4px #40414550 inset,
+     4px  4px 4px #11131650 inset;
+}
+
+.dark .toolbar .item .light {
+  display: none; 
+}
+
+.dark .shapes-wrapper .item .light {
+  display: none;
+}
+
+.dark .tool-test {
+  box-shadow: 
+    -9px -9px 16px #3b3c41, 
+     9px  9px 16px #11131650;
+}
+
+.dark .shapes-wrapper .item {
+  height: 48px;
+  width: 48px;
+  border-radius: 60px;
+  display: block;
+  transition: all 0.3s;
+}
+
+.dark .shapes-wrapper img {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dark .shapes-wrapper .item:hover {
+  box-shadow: 
+    -9px -9px 16px #3b3c41, 
+     9px  9px 16px #11131650;
+}
+
+.dark #my-canvas {
+  background-color: #33363D;
+  box-shadow: 
+    -23px -23px 50px #3B3C41, 
+     28px  28px 45px #11131660;
+}
+
+.dark .logo {
+  background-image: url("../logo/dark-logo.svg");
+}
+
+.dark #darklight-toggle {
+  background-color: #33363d;
+}
+
+.dark .toggle {
+  background: linear-gradient(0.25turn, #33363d, #33363d, #fda704);
+  box-shadow:
+    -8px -4px 8px #3B3C41,
+     8px  4px 12px #11131660;
+
+}
+
+.dark .indicator {
+  background: #33363d;
+  box-shadow:
+    -5px -5px 10px #3B3C41 inset,
+     5px  5px 10px #11131660 inset;
+}
