@@ -31,8 +31,12 @@
      4px  4px 4px #11131650 inset;
 }
 
-.dark .pen {
-  background-image: url("../Toolbar/Icons/darkm-pen.svg");
+.dark .toolbar .item .light {
+  display: none; 
+}
+
+.dark .shapes-wrapper .item .light {
+  display: none;
 }
 
 .dark .tool-test {

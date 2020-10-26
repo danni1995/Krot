@@ -38,11 +38,38 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
+.toolbar .item .solidcolorwheel {
+  display: none;
+}
+.toolbar .item.clicked .solidcolorwheel {
+  display: block;
+}
+.toolbar .item.clicked .colorwheel {
+  display: none;
+}
+
+.toolbar img.eraser {
+  top: 55%;
+}
+
+.toolbar img.light.text {
+  top: 45%;
+}
+
+.toolbar img.dark.text {
+  top: 45%;
+  left: 55%;
+}
+
 .toolbar img.dots {
   top: 40%;
 }
 
-.toolbar img.color-wheel {
+.toolbar img.colorwheel {
+  top: 55%;
+}
+
+.toolbar img.solidcolorwheel {
   top: 55%;
 }
 
