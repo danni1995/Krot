@@ -84,9 +84,9 @@ export default class Fill { // Name of the class
         return color1[0] === color2[0] && color1[1] === color2[1] && color1[2] == color2[2] && color1[3] === color2[3] ;
     }
 
-    hexToRgba(hex) {
+    hexToRgba(hex) { // This converts from hex (has to be 6 no more no less) to rgba
         console.log(hex);
-        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex); // This converts it
         return [
             parseInt(result[1], 16),
             parseInt(result[2], 16),
