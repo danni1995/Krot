@@ -23,6 +23,7 @@ import {TOOL_BUCKET, TOOL_COLORWHEEL, TOOL_DOTS, TOOL_ERASER, TOOL_EYEDROP, TOOL
 
 let paint = new Paint('my-canvas');
 paint.activeTool = TOOL_PEN;
+paint.selectedColor = "#387704";
 paint.init();
 
 var canvas = document.getElementById("my-canvas");
