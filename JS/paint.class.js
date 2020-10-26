@@ -46,7 +46,7 @@ export default class Paint { // Here we have a class called Paint. This class is
             this.context.moveTo(this.startPos.x, this.startPos.y); 
         } else if(this.tool === TOOL_BUCKET) {
             new Fill(this.canvas, this.startPos, this.color);
-        }
+        } 
     }
 
 
