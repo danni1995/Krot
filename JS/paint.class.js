@@ -48,7 +48,7 @@ export default class Paint { // Here we have a class called Paint. This class is
             new Fill(this.canvas, this.startPos, this.color);
         } else if (this.tool === TOOL_ERASER) {
             this.context.clearRect(this.startPos.x - 10, this.startPos.y - 10, 20, 20);
-        }
+        } 
     }
 
 
@@ -113,5 +113,6 @@ export default class Paint { // Here we have a class called Paint. This class is
         this.context.stroke(); // Make a stroke baby
         this.context.lineWidth = 10; // Then make the stroke thick baby
     }
+
 }
 

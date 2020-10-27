@@ -1,3 +1,4 @@
+import ColorWheel from './colorwheel.class.js';
 import Paint from './paint.class.js';
 
 import {TOOL_BUCKET, TOOL_COLORWHEEL, TOOL_DOTS, TOOL_ERASER, TOOL_EYEDROP, TOOL_PEN, TOOL_SHAPES, TOOL_SHAPES_CIRCLE, TOOL_SHAPES_RECTANGLE, TOOL_SHAPES_TRIANGLE} from './tool.js';
@@ -23,11 +24,25 @@ document.querySelector('#darklight-toggle').addEventListener('click', () => {
 
 let paint = new Paint('my-canvas');
 paint.activeTool = TOOL_PEN;
-paint.selectedColor = "#387704";
+paint.selectedColor = "#000000";
 paint.init();
 
+const preview  = document.querySelector(".preview");
+
+function colorWheelCallback(pixel) {
+    if(pixel[3] === 0) { // dont get color if its invisible
+        return; 
+    }
+    console.log(pixel);
+    var dColor = pixel[2] + 256 * pixel[1] + 65536 * pixel[0];
+    var hexValue = '#' + ('0000' + dColor.toString(16)).substr(-6);
+    paint.selectedColor = hexValue;
+    preview.style.backgroundColor = hexValue;
+} 
 var canvas = document.getElementById("my-canvas");
 var ctx = canvas.getContext("2d");
+const colorWheel = new ColorWheel(colorWheelCallback);
+console.log(colorWheel);
 
 
 /* Here we select all the tools by finding them in the html with "[data-tool]".
@@ -46,8 +61,14 @@ document.querySelectorAll("[data-tool]").forEach(
                 case TOOL_SHAPES:
                     document.querySelector(".shapes-wrapper").style.display = "block";
                     break;
-            default:
-                document.querySelector(".shapes-wrapper").style.display = "none";
+                case TOOL_COLORWHEEL:
+                    colorWheel.init();
+                    document.querySelector(".color-wheel").style.display = "block";
+                    break;
+                default:
+                    document.querySelector(".shapes-wrapper").style.display = "none";
+                    document.querySelector(".color-wheel").style.display = "none";
+                    break;
             }
 
         });
