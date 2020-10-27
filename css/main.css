@@ -19,6 +19,12 @@ html, body {
 }
 
 /* ----- TOOLBAR START ----- */
+
+
+.mobile-popup {
+  display: none
+}
+
 .toolbar {
   display: flex;
   flex-direction: column;
@@ -108,7 +114,7 @@ html, body {
 }
 
 .toggle-state:checked ~ .indicator {
-  transform: translate3d(25%, 0, 0);
+  transform: translate3d(75%, 0, 0);
 }
 
 /* ----- TOOLBAR END ----- */
@@ -203,15 +209,19 @@ main {
     }
 
     .mobile-popup {
-      background-color: tomato;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100vw;
     }
 
     .mobile-toolbar-nav {
+      
       width: 80px;
       height: 7px;
       border-radius: 6px;
       border-style: none;
+
     }
     
     .label {
