@@ -25,6 +25,7 @@ html, body {
   justify-content: space-between;
   width: 90px;
   height: 100vh;
+  position: relative;
 } 
   
 .toolbar-items {
@@ -59,6 +60,21 @@ html, body {
 
 .toolbar .item.clicked .colorwheel {
   display: none;
+}
+
+.preview {
+  background-color: rgb(0, 0, 0);
+  width: 2rem;
+  height: 2rem;
+  transform: rotate(45deg);
+  border-radius: 0% 50% 50% 50%;
+  position: absolute;
+}
+
+#colorwheel {
+  position: absolute;
+  left: 8rem;
+  top: 30rem;
 }
 
 .toolbar img.eraser {

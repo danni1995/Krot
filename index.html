@@ -51,8 +51,16 @@
           <!--COLOR WHEEL TOOL-->
           <div class="item" data-tool="colorwheel" title="color wheel">
             <img class="colorwheel" src="/Toolbar/Icons/color-wheel.png" alt=" color wheel"/>
-            <img class="solidcolorwheel" src="/Toolbar/Icons/color-wheel-solid.png" alt=" color wheel"/>
+            <!-- <img class="solidcolorwheel" src="/Toolbar/Icons/color-wheel-solid.png" alt=" color wheel"/> -->
+            <div  class="solidcolorwheel preview"></div>
           </div>
+
+          <div class="color-wheel" style="display: none;">
+            <canvas id="colorwheel" width="300" height="300"></canvas>
+          </div>
+
+          <!--COLOR WHEEL END-->
+          
         </div>
 
         <!--LIGHT TO DARK MODE TOGGLE-->
