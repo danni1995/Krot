@@ -23,7 +23,7 @@ const resizeCanvas = () => {
 };
   
 document.addEventListener('DOMContentLoaded', () => {
-    // Resize the VPN tunnel canvas so that it fits the screen
+    // Resize the canvas so that it fits the screen
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas, false);
 });
