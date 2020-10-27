@@ -121,7 +121,7 @@ html, body {
 }
 
 .toggle-state:checked ~ .indicator {
-  transform: translate3d(75%, 0, 0);
+  transform: translate3d(25%, 0, 0);
 }
 
 /* ----- TOOLBAR END ----- */
@@ -191,26 +191,16 @@ main {
   @media only screen and (max-width: 600px) {
     
     .wrapper {
-      flex-direction: column-reverse;
+      flex-direction: row-reverse
     } 
   
     .toolbar {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 90px;
-      width: 100vw;
-      position: absolute;
-      bottom: 0;
-      padding: 0 2rem 1rem 2rem;
+      flex-direction: row;
+      height: auto;
+      width: 80vw;
+    
     }
-   
-    .toolbar .mobile {
-      display: none;
-      position: absolute;
-      right: 2rem;
-      padding-top: 3rem;
-    } 
   
     .shapes-wrapper  {
       /* display: inline-flex;
@@ -227,6 +217,11 @@ main {
       display: none;
     }
   
+    .invisible-filler {
+      display: ;
+    }
+    
+
     #mycanvas {
     
     }

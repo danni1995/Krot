@@ -55,11 +55,6 @@
 
 /* --- LIGHT TO DARK MODE TOGGLE --- */
   
-    .light #darklight-toggle {
-        background-color: #f2f2f2;
-    }
-  
-  
     .light .toggle {
       background: linear-gradient(0.25turn, #0d2750, #f2f2f2, #f2f2f2);
       box-shadow:
