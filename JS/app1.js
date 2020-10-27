@@ -34,7 +34,6 @@ var ctx = canvas.getContext("2d");
 Then we add an event listener "click" to select each tool */
 document.querySelectorAll("[data-tool]").forEach(
     item => {
-        console.log("asdf")
         item.addEventListener("click", e =>{
 
             document.querySelector("[data-tool].clicked").classList.toggle("clicked"); // remove the class "clicked" from last used tool

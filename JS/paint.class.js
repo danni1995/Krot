@@ -12,6 +12,7 @@ export default class Paint { // Here we have a class called Paint. This class is
         this.context = canvas.getContext("2d"); // Here we set the context to 2d, it provides the 2D rendering context for the drawing surface of the <canvas> element.
     }
 
+
     set selectedColor(color) {
         this.color = color;
         this.context.strokeStyle = this.color;
@@ -45,7 +46,9 @@ export default class Paint { // Here we have a class called Paint. This class is
             this.context.moveTo(this.startPos.x, this.startPos.y); 
         } else if(this.tool === TOOL_BUCKET) {
             new Fill(this.canvas, this.startPos, this.color);
-        } 
+        } else if (this.tool === TOOL_ERASER) {
+            this.context.clearRect(this.startPos.x - 10, this.startPos.y - 10, 20, 20);
+        }
     }
 
 
@@ -63,6 +66,9 @@ export default class Paint { // Here we have a class called Paint. This class is
                 break;
             case TOOL_PEN: // If the mouse is moving while its down
                 this.drawFreeLine(); // Then do drawFreeLine();
+                break;
+            case TOOL_ERASER:
+                this.context.clearRect(this.currentPos.x - 10, this.currentPos.y - 10, 20, 20);
                 break;
             default:
                 break;
