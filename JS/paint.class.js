@@ -1,6 +1,6 @@
 import Fill from './fill.class.js';
 import Point from './point.model.js';
-import {TOOL_BUCKET, TOOL_COLORWHEEL, TOOL_DOTS, TOOL_ERASER, TOOL_EYEDROP, TOOL_PEN, TOOL_SHAPES, TOOL_SHAPES_CIRCLE, TOOL_SHAPES_RECTANGLE, TOOL_SHAPES_TRIANGLE, TOOL_TEXT} from './tool.js';
+import {TOOL_BUCKET, TOOL_COLORWHEEL, TOOL_DOTS, TOOL_ERASER, TOOL_EYEDROP, TOOL_PEN, TOOL_SHAPES, TOOL_SHAPES_CIRCLE, TOOL_SHAPES_RECTANGLE, TOOL_SHAPES_TRIANGLE} from './tool.js';
 import { findDistance, getMouseLocationOnCanvas} from './utility.js';
 
 export default class Paint { // Here we have a class called Paint. This class is exported into app1.js.
@@ -11,6 +11,7 @@ export default class Paint { // Here we have a class called Paint. This class is
         this.canvas = canvas; // Here we declare that the variable is the canvas, so we can referance the canvas in the code below.
         this.context = canvas.getContext("2d"); // Here we set the context to 2d, it provides the 2D rendering context for the drawing surface of the <canvas> element.
     }
+
 
     set selectedColor(color) {
         this.color = color;
@@ -45,7 +46,9 @@ export default class Paint { // Here we have a class called Paint. This class is
             this.context.moveTo(this.startPos.x, this.startPos.y); 
         } else if(this.tool === TOOL_BUCKET) {
             new Fill(this.canvas, this.startPos, this.color);
-        } 
+        } else if (this.tool === TOOL_ERASER) {
+            this.context.clearRect(this.startPos.x - 10, this.startPos.y - 10, 20, 20);
+        }
     }
 
 
@@ -63,6 +66,9 @@ export default class Paint { // Here we have a class called Paint. This class is
                 break;
             case TOOL_PEN: // If the mouse is moving while its down
                 this.drawFreeLine(); // Then do drawFreeLine();
+                break;
+            case TOOL_ERASER:
+                this.context.clearRect(this.currentPos.x - 10, this.currentPos.y - 10, 20, 20);
                 break;
             default:
                 break;

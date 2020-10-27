@@ -1,6 +1,6 @@
 import Paint from './paint.class.js';
 
-import {TOOL_BUCKET, TOOL_COLORWHEEL, TOOL_DOTS, TOOL_ERASER, TOOL_EYEDROP, TOOL_PEN, TOOL_SHAPES, TOOL_SHAPES_CIRCLE, TOOL_SHAPES_RECTANGLE, TOOL_SHAPES_TRIANGLE, TOOL_TEXT} from './tool.js';
+import {TOOL_BUCKET, TOOL_COLORWHEEL, TOOL_DOTS, TOOL_ERASER, TOOL_EYEDROP, TOOL_PEN, TOOL_SHAPES, TOOL_SHAPES_CIRCLE, TOOL_SHAPES_RECTANGLE, TOOL_SHAPES_TRIANGLE} from './tool.js';
 
 // light <-> dark mode toggle
 document.addEventListener('DOMContentLoaded', () => {
@@ -34,7 +34,6 @@ var ctx = canvas.getContext("2d");
 Then we add an event listener "click" to select each tool */
 document.querySelectorAll("[data-tool]").forEach(
     item => {
-        console.log("asdf")
         item.addEventListener("click", e =>{
 
             document.querySelector("[data-tool].clicked").classList.toggle("clicked"); // remove the class "clicked" from last used tool
