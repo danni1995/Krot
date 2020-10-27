@@ -65,19 +65,6 @@ html, body {
   top: 55%;
 }
 
-.toolbar img.light.text {
-  top: 45%;
-}
-
-.toolbar img.dark.text {
-  top: 45%;
-  left: 55%;
-}
-
-.toolbar img.dots {
-  top: 40%;
-}
-
 .toolbar img.colorwheel {
   top: 55%;
 }
@@ -191,24 +178,60 @@ main {
   @media only screen and (max-width: 600px) {
     
     .wrapper {
-      flex-direction: row-reverse
+      flex-direction: column-reverse;
+      align-items: center;
+      
     } 
-  
+    
     .toolbar {
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-top: 1rem;
+      padding-left: 0.5rem;
+      height: auto;
+      width: 90vw;
+      border-radius: 8px;
+      margin: 0;
+    }
+
+    .toolbar-items {
       display: flex;
       flex-direction: row;
-      height: auto;
-      width: 80vw;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mobile-popup {
+      background-color: tomato;
+      width: 100vw;
+    }
+
+    .mobile-toolbar-nav {
+      width: 80px;
+      height: 7px;
+      border-radius: 6px;
+      border-style: none;
+    }
     
+    .label {
+      margin: 1.5rem 1rem;
     }
-  
+
     .shapes-wrapper  {
-      /* display: inline-flex;
-      top: 43rem;
-      left: 5rem;
-   */
+      display: inline-flex;
+      top: auto;
+      bottom: 15rem;
+      left: auto;
+      right: 2rem;
     }
   
+    .label {
+      
+
+    }
+
+
     .shapes-wrapper .item {
     
     }
