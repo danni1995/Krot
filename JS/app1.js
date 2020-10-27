@@ -1,3 +1,7 @@
+import Paint from './paint.class.js';
+
+import {TOOL_BUCKET, TOOL_COLORWHEEL, TOOL_DOTS, TOOL_ERASER, TOOL_EYEDROP, TOOL_PEN, TOOL_SHAPES, TOOL_SHAPES_CIRCLE, TOOL_SHAPES_RECTANGLE, TOOL_SHAPES_TRIANGLE, TOOL_TEXT} from './tool.js';
+
 // light <-> dark mode toggle
 document.addEventListener('DOMContentLoaded', () => {
     const htmlClasses = localStorage.getItem('htmlClasses');
@@ -15,11 +19,7 @@ document.querySelector('#darklight-toggle').addEventListener('click', () => {
     const htmlClasses = htmlElement.classList.toString();
     localStorage.setItem('htmlClasses', htmlClasses);
 });
-
-import Paint from './paint.class.js';
-
-import {TOOL_BUCKET, TOOL_COLORWHEEL, TOOL_DOTS, TOOL_ERASER, TOOL_EYEDROP, TOOL_PEN, TOOL_SHAPES, TOOL_SHAPES_CIRCLE, TOOL_SHAPES_RECTANGLE, TOOL_SHAPES_TRIANGLE, TOOL_TEXT} from './tool.js';
-
+// light <-> dark mode toggle end
 
 let paint = new Paint('my-canvas');
 paint.activeTool = TOOL_PEN;

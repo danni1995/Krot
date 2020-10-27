@@ -2,113 +2,211 @@
 <html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/dark.css">
-    <link rel="stylesheet" href="css/light.css">
+    <link rel="stylesheet" href="css/dark.css" />
+    <link rel="stylesheet" href="css/light.css" />
     <script src="JS/app1.js" type="module" defer></script>
+    <script src="JS/canvas.resize.js"></script>
+
     <title>Krot - Drawing App</title>
   </head>
   <body>
+    <div class="wrapper">
+      <!--WRAPPER START-->
 
-    <div class="wrapper"> <!--WRAPPER START-->
+      <aside class="toolbar">
+        <!--TOOLBAR START-->
+        <div class="toolbar-items">
+          <!--PEN TOOL-->
+          <div class="item" data-tool="pen" title="Pen Tool">
+            <img
+              class="light"
+              src="Toolbar/Icons/lightm-pen.svg"
+              alt="pen tool"
+            />
+            <img
+              class="dark"
+              src="Toolbar/Icons/darkm-pen.svg"
+              alt="pen tool"
+            />
+          </div>
 
-      <aside class="toolbar"> <!--TOOLBAR START-->
+          <!--ERASER TOOL-->
+          <div class="item clicked" data-tool="eraser" title="Eraser Tool">
+            <img
+              class="light eraser"
+              src="/Toolbar/Icons/lightm-eraser.svg"
+              alt="eraser tool"
+            />
+            <img
+              class="dark eraser"
+              src="/Toolbar/Icons/darkm-eraser.svg"
+              alt="eraser tool"
+            />
+          </div>
 
-        
-        <!--PEN TOOL-->
-        <div class="item" data-tool="pen" title="Pen Tool">
-          <img  class="light" src="Toolbar/Icons/lightm-pen.svg" alt="pen tool"/>
-          <img  class="dark" src="Toolbar/Icons/darkm-pen.svg" alt="pen tool"/>
-        </div>
+          <!--BUCKET TOOL-->
+          <div class="item" data-tool="bucket" title="Bucket Tool">
+            <img
+              class="light"
+              src="/Toolbar/Icons/lightm-bucket.svg"
+              alt="bucket tool"
+            />
+            <img
+              class="dark"
+              src="/Toolbar/Icons/darkm-bucket.svg"
+              alt="bucket tool"
+            />
+          </div>
 
-        <!--ERASER TOOL-->
-        <div class="item clicked" data-tool="eraser" title="Eraser Tool">
-          <img class="light eraser" src="/Toolbar/Icons/lightm-eraser.svg" alt="eraser tool" />
-          <img class="dark eraser" src="/Toolbar/Icons/darkm-eraser.svg" alt="eraser tool" />
-        </div>
+          <!--SHAPES TOOL-->
+          <div class="item" data-tool="shapes" title="Shapes Tool">
+            <img
+              class="light shapes"
+              src="/Toolbar/Icons/lightm-shapes.svg"
+              alt="shapes"
+            />
+            <img
+              class="dark shapes"
+              src="/Toolbar/Icons/darkm-shapes.svg"
+              alt="shapes"
+            />
+          </div>
 
-        <!--BUCKET TOOL-->
-        <div class="item" data-tool="bucket" title="Bucket Tool">
-          <img class="light" src="/Toolbar/Icons/lightm-bucket.svg" alt="bucket tool"/>
-          <img class="dark" src="/Toolbar/Icons/darkm-bucket.svg" alt="bucket tool"/>
-        </div>
+          <div class="mobile">
+            <!--TEXT TOOL-->
+            <div class="item" data-tool="text" title="Text Tool">
+              <img
+                class="light text"
+                src="/Toolbar/Icons/lightm-text.svg"
+                alt="text tool"
+              />
+              <img
+                class="dark text"
+                src="/Toolbar/Icons/darkm-text.svg"
+                alt="text tool"
+              />
+            </div>
 
-        <!--TEXT TOOL-->
-        <div class="item" data-tool="text" title="Text Tool">
-          <img class="light text" src="/Toolbar/Icons/lightm-text.svg" alt="text tool" />
-          <img class="dark text" src="/Toolbar/Icons/darkm-text.svg" alt="text tool" />
-        </div>
+            <!--EYE DROP TOOL-->
+            <div class="item" data-tool="eyedrop" title="Eye Dropper">
+              <img
+                class="light"
+                src="Toolbar/Icons/lightm-eyedrop.svg"
+                alt="eye drop"
+              />
+              <img
+                class="dark"
+                src="Toolbar/Icons/darkm-eyedrop.svg"
+                alt="eye drop"
+              />
+            </div>
 
-        <!--EYE DROP TOOL-->
-        <div class="item" data-tool="eyedrop" title="Eye Dropper">
-          <img class="light" src="Toolbar/Icons/lightm-eyedrop.svg" alt="eye drop" />
-          <img class="dark" src="Toolbar/Icons/darkm-eyedrop.svg" alt="eye drop" />
-        </div>
+            <!--COLOR WHEEL TOOL-->
+            <div class="item" data-tool="colorwheel" title="color wheel">
+              <img
+                class="colorwheel"
+                src="/Toolbar/Icons/color-wheel.png"
+                alt=" color wheel"
+              />
+              <img
+                class="solidcolorwheel"
+                src="/Toolbar/Icons/color-wheel-solid.png"
+                alt=" color wheel"
+              />
+            </div>
 
-        <!--SHAPES TOOL-->
-        <div class="item" data-tool="shapes" title="Shapes Tool">
-          <img class="light shapes" src="/Toolbar/Icons/lightm-shapes.svg" alt="shapes" />
-          <img class="dark shapes" src="/Toolbar/Icons/darkm-shapes.svg" alt="shapes" />
-        </div>
+            <!--ex-->
+            <!-- <div class="item" data-tool="ex" title="ex">
+            <img class="light ex" src="/Toolbar/Icons/lightm-ex.svg" alt="dots"/>
+            <img class="dark ex" src="/Toolbar/Icons/darkm-ex.svg" alt="dots"/>
+          </div> -->
+          </div>
 
-        <!--COLOR WHEEL TOOL-->
-        <div class="item" data-tool="colorwheel" title="color wheel">
-          <img class="colorwheel" src="/Toolbar/Icons/color-wheel.png" alt=" color wheel"/>
-          <img class="solidcolorwheel" src="/Toolbar/Icons/color-wheel-solid.png" alt=" color wheel"/>
-        </div>
-
-        <!--DOTS-->
-        <div class="item" data-tool="dots" title="Dots">
+          <!--DOTS-->
+          <!-- <div class="item" data-tool="dots" title="Dots">
           <img class="light dots" src="/Toolbar/Icons/lightm-dots.svg" alt="dots"/>
           <img class="dark dots" src="/Toolbar/Icons/darkm-dots.svg" alt="dots"/>
+        </div> -->
         </div>
-        
+
         <!--LIGHT TO DARK MODE TOGGLE-->
-        <label class="label">
+        <label class="label mobile">
           <div class="toggle">
-            <input class="toggle-state" id="darklight-toggle" type="checkbox" name="check" value="check" />
+            <input
+              class="toggle-state"
+              id="darklight-toggle"
+              type="checkbox"
+              name="check"
+              value="check"
+            />
             <div class="indicator"></div>
           </div>
         </label>
+      </aside>
+      <!--TOOLBAR END-->
 
-      </aside> <!--TOOLBAR END-->
-
-      <div class="shapes-wrapper" style="display: block;"> <!--SHAPES WRAPPER START-->
-        <div class="tool-test">
+      <!--SHAPES WRAPPER START-->
+      <div class="shapes-wrapper" style="display: block">
         <!--RECTANGLE TOOL-->
         <div class="item" data-tool="rectangle" title="rectangle Tool">
-          <img class="light" src="Toolbar/Icons/lightm-rectangle.svg" alt="rectangle" />
-          <img class="dark" src="Toolbar/Icons/darkm-rectangle.svg" alt="rectangle" />
+          <img
+            class="light"
+            src="Toolbar/Icons/lightm-rectangle.svg"
+            alt="rectangle"
+          />
+          <img
+            class="dark"
+            src="Toolbar/Icons/darkm-rectangle.svg"
+            alt="rectangle"
+          />
         </div>
-        
+
         <!--CIRCLE TOOL-->
         <div class="item" data-tool="circle" title="circle Tool">
-          <img class="light" src="Toolbar/Icons/lightm-ellipse.svg" alt="circle" />
-          <img class="dark" src="Toolbar/Icons/darkm-ellipse.svg" alt="circle" />
+          <img
+            class="light"
+            src="Toolbar/Icons/lightm-ellipse.svg"
+            alt="circle"
+          />
+          <img
+            class="dark"
+            src="Toolbar/Icons/darkm-ellipse.svg"
+            alt="circle"
+          />
         </div>
-        
+
         <!--TRIANGLE TOOL-->
         <div class="item" data-tool="triangle" title="triangle Tool">
-          <img class="light" src="Toolbar/Icons/lightm-polygon.svg" alt="triangle" />
-          <img class="dark" src="Toolbar/Icons/darkm-polygon.svg" alt="triangle" />
+          <img
+            class="light"
+            src="Toolbar/Icons/lightm-polygon.svg"
+            alt="triangle"
+          />
+          <img
+            class="dark"
+            src="Toolbar/Icons/darkm-polygon.svg"
+            alt="triangle"
+          />
         </div>
       </div>
-    </div> <!--SHAPES WRAPPER END-->
-    
-    <main>
-      
-      <!--LOGO-->
-      <div class="logo"></div>
+      <!--SHAPES WRAPPER END-->
+
+      <main>
+        <!--LOGO-->
+        <div class="logo"></div>
 
         <!--CANVAS-->
-        <div class="mycanvas">
-          <canvas id="my-canvas" height="600px" width="1000px"></canvas>
+        <div class="canvas-wrapper">
+          <div class="invisible-filler"></div>
+
+          <div class="mycanvas">
+            <canvas id="my-canvas"></canvas>
+          </div>
         </div>
-
       </main>
-
-    </div> <!--WRAPPER END-->
-
+    </div>
+    <!--WRAPPER END-->
   </body>
 </html>

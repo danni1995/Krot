@@ -9,7 +9,6 @@ export default class Paint { // Here we have a class called Paint. This class is
         const canvas = document.getElementById(canvasID); // In the HTML we made an id for the canvas element. Here we make a veriable called canvas, and it is fetched using getElementById.
         this.canvas = canvas; // Here we declare that the variable is the canvas, so we can referance the canvas in the code below.
         this.context = canvas.getContext("2d"); // Here we set the context to 2d, it provides the 2D rendering context for the drawing surface of the <canvas> element.
-
     }
 
 

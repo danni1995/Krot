@@ -2,12 +2,26 @@
   background-color: #f2f2f2;
 }
 
+/* ----- WRAPPER START ----- */
+
+/* ----- TOOLBAR START ----- */
+
 .light .toolbar {
     background-color: #f2f2f2;
     box-shadow:  
     -23px -23px 50px #ffffff, 
      15px  15px 45px #11131626;
   }
+
+  /* @media only screen and (max-width: 1100px) {
+    .light .toolbar .mobile {
+      background-color: #f2f2f2;
+      box-shadow:  
+      -23px -23px 50px #ffffff, 
+       15px  15px 45px #11131626;
+       border-radius: 8px;
+    } 
+  }  */
 
   .light .toolbar .item {
     background-color: #f2f2f2;
@@ -39,11 +53,37 @@
     display: none; 
   }
 
+/* --- LIGHT TO DARK MODE TOGGLE --- */
+  
+    .light #darklight-toggle {
+        background-color: #f2f2f2;
+    }
+  
+  
+    .light .toggle {
+      background: linear-gradient(0.25turn, #0d2750, #f2f2f2, #f2f2f2);
+      box-shadow:
+      -8px -4px 8px #ffffff,
+       8px  4px 12px #11131626;
+      
+    }
+  
+      .light .indicator {
+        box-shadow:
+          -5px -5px 10px #ffffff inset,
+          -2px -2px 5px #ffffff inset,
+           5px  5px 10px #11131636 inset;
+      }
+
+  /* ----- TOOLBAR END ----- */
+
+  /* ----- SHAPES WRAPPER START ----- */
+
   .light .shapes-wrapper .item .dark{
     display: none;
   }
 
-  .light .tool-test {
+  .light .shapes-wrapper {
     box-shadow: 
       -9px -9px 16px #ffffff, 
        9px  9px 16px #11131626;
@@ -70,32 +110,22 @@
        9px  9px 16px #11131626;
   }
 
+/* ----- SHAPES WRAPPER END -----*/
+
+/* ----- MAIN START ----- */
+
+/* --- LOGO --- */
+  .light .logo {
+    background-image: url("../logo/light-logo.svg");
+  }
+
+/* --- CANVAS --- */
   .light #my-canvas {
     background-color: #f2f2f2;
     box-shadow: 
      -20px -20px 45px #ffffff, 
       20px  20px 45px #11131626;
   }
-  
-  .light .logo {
-    background-image: url("../logo/light-logo.svg");
-  }
 
-  .light #darklight-toggle {
-      background-color: #f2f2f2;
-  }
-
-
-  .light .toggle {
-    background: linear-gradient(0.25turn, #0d2750, #f2f2f2, #f2f2f2);
-    box-shadow:
-    -8px -4px 8px #ffffff,
-     8px  4px 12px #11131626;
-    
-  }
-
-    .light .indicator {
-      box-shadow:
-        -5px -5px 10px #ffffff inset,
-         5px  5px 10px #11131626 inset;
-    }
+  /* ----- MAIN END ----- */
+  /* ----- WRAPPER END ----- */
