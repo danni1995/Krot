@@ -13,6 +13,13 @@
    -23px -23px 50px 0px #3B3C41;
 }
 
+.dark .mobile-toolbar-nav {
+  background-color: #33363d;
+  box-shadow: 4px 2px 4px #11131650 inset, 
+  -4px -2px 4px #40414550 inset;
+  
+}
+
 .dark .toolbar .item {
   background-color: #33363D;
   box-shadow: 
@@ -24,15 +31,15 @@
 .dark .toolbar .item:hover {
   box-shadow: 
   -9px -9px 16px #3b3c41, 
-  9px  9px 16px #11131650;
+   9px  9px 16px #11131650;
 }
 
 .dark .toolbar .item.clicked {
   box-shadow: 
   -8px -4px 8px #40414550,
-  8px  4px 12px #11131650,
+   8px  4px 12px #11131650,
   -4px -4px 4px #40414550 inset,
-  4px  4px 4px #11131650 inset;
+   4px  4px 4px #11131650 inset;
 }
 
 .dark .toolbar .item .light {
