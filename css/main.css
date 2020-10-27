@@ -69,11 +69,13 @@ html, body {
 
 .preview {
   background-color: rgb(0, 0, 0);
-  width: 2rem;
-  height: 2rem;
+  width: 1.6rem;
+  height: 1.6rem;
   transform: rotate(45deg);
   border-radius: 0% 50% 50% 50%;
   position: absolute;
+  left: 1.68rem;
+  top: 33.3rem;
 }
 
 #colorwheel {

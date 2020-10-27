@@ -47,7 +47,7 @@ export default class Paint { // Here we have a class called Paint. This class is
         } else if(this.tool === TOOL_BUCKET) {
             new Fill(this.canvas, this.startPos, this.color);
         } else if (this.tool === TOOL_ERASER) {
-            this.context.clearRect(this.startPos.x - 10, this.startPos.y - 10, 20, 20);
+            this.context.clearRect(this.startPos.x - 10, this.startPos.y - 10, 30, 30);
         } 
     }
 
@@ -68,7 +68,7 @@ export default class Paint { // Here we have a class called Paint. This class is
                 this.drawFreeLine(); // Then do drawFreeLine();
                 break;
             case TOOL_ERASER:
-                this.context.clearRect(this.currentPos.x - 10, this.currentPos.y - 10, 20, 20);
+                this.context.clearRect(this.currentPos.x - 10, this.currentPos.y - 10, 30, 30);
                 break;
             default:
                 break;

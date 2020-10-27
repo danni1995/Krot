@@ -64,6 +64,7 @@ document.querySelectorAll("[data-tool]").forEach(
                 case TOOL_COLORWHEEL:
                     colorWheel.init();
                     document.querySelector(".color-wheel").style.display = "block";
+                    document.querySelector(".preview").style.display = "block";
                     break;
                 default:
                     document.querySelector(".shapes-wrapper").style.display = "none";
