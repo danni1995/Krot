@@ -148,10 +148,7 @@ function drawRubberbandShape(loc){
     ctx.fillColor = fillColor;
     ctx.strokeRect(shapeBoundingBox.left, shapeBoundingBox.top, shapeBoundingBox.width, shapeBoundingBox.height);
 }
-//Draw Rubberband Shape
 
-
-//Updage Rubberband on Movement
 
 
 //ReactToMouseDown
@@ -198,3 +195,5 @@ function ReactToMouseUp(e){
     usingPen = false;
 
 }
+
+

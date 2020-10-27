@@ -23,6 +23,7 @@ document.querySelector('#darklight-toggle').addEventListener('click', () => {
 
 let paint = new Paint('my-canvas');
 paint.activeTool = TOOL_PEN;
+paint.selectedColor = "#387704";
 paint.init();
 
 var canvas = document.getElementById("my-canvas");

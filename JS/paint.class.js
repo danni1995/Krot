@@ -1,6 +1,7 @@
+import Fill from './fill.class.js';
 import Point from './point.model.js';
 import {TOOL_BUCKET, TOOL_COLORWHEEL, TOOL_DOTS, TOOL_ERASER, TOOL_EYEDROP, TOOL_PEN, TOOL_SHAPES, TOOL_SHAPES_CIRCLE, TOOL_SHAPES_RECTANGLE, TOOL_SHAPES_TRIANGLE, TOOL_TEXT} from './tool.js';
-import { findDistance, getMouseLocationOnCanvas } from './utility.js';
+import { findDistance, getMouseLocationOnCanvas} from './utility.js';
 
 export default class Paint { // Here we have a class called Paint. This class is exported into app1.js.
 
@@ -11,6 +12,10 @@ export default class Paint { // Here we have a class called Paint. This class is
         this.context = canvas.getContext("2d"); // Here we set the context to 2d, it provides the 2D rendering context for the drawing surface of the <canvas> element.
     }
 
+    set selectedColor(color) {
+        this.color = color;
+        this.context.strokeStyle = this.color;
+    }
 
     // ACTIVE TOOL
     set activeTool(tool) { // set binds an object (activeTool) property (this.tool = tool;) to a function (paint.activeTool = selectedTool;(inside app1.js)) to be called when there is an attempt to set that property.
@@ -34,19 +39,19 @@ export default class Paint { // Here we have a class called Paint. This class is
         document.onmouseup = e => this.onMouseUp(e); // Mouse up will execute and will make everything stop
 
         this.startPos = getMouseLocationOnCanvas(e, this.canvas); // we make a property called startPos that uses the function getMouseLocation inside utility.js
-        console.log(this.startPos); // can be removed, just checking if it works
 
-        if(this.tool === TOOL_PEN) {
-            this.context.beginPath();
-            this.context.moveTo(this.startPos.x, this.startPos.y);
-        }
+        if(this.tool === TOOL_PEN) { // If the mose is down and the tool selected is the pen tool
+            this.context.beginPath(); // then begin a new path
+            this.context.moveTo(this.startPos.x, this.startPos.y); 
+        } else if(this.tool === TOOL_BUCKET) {
+            new Fill(this.canvas, this.startPos, this.color);
+        } 
     }
 
 
     // ON MOUSE MOVE
     onMouseMove(e) {
         this.currentPos = getMouseLocationOnCanvas(e, this.canvas); // we make a property called currentPos that uses the function getMouseLocation inside utility.js
-        console.log(this.currentPos); // can be removed, just checking if it works
 
         // DRAWING SHAPES
         switch(this.tool){
@@ -56,8 +61,8 @@ export default class Paint { // Here we have a class called Paint. This class is
             case TOOL_SHAPES_TRIANGLE:
                 this.drawShape(); // we call upon the function drawShape and that code will occur. All three shapes use drawShape()
                 break;
-            case TOOL_PEN:
-                this.drawFreeLine();
+            case TOOL_PEN: // If the mouse is moving while its down
+                this.drawFreeLine(); // Then do drawFreeLine();
                 break;
             default:
                 break;
@@ -80,7 +85,7 @@ export default class Paint { // Here we have a class called Paint. This class is
         this.context.beginPath(); // we use the method beginPath to Begin a path, we want this for all shapes.
 
         if(this.tool === TOOL_SHAPES_RECTANGLE) {
-            this.context.rect(this.startPos.x, this.startPos.y, this.currentPos.x - this.startPos.x, this.currentPos.y - this.startPos.y); // (starting position x value, starting position y value, calculate with, calculate height)
+            this.context.rect(this.startPos.x, this.startPos.y, this.currentPos.x - this.startPos.x, this.currentPos.y - this.startPos.y); // (starting position x value, starting position y value, calculate with, calculate height) 
         }else if (this.tool === TOOL_SHAPES_CIRCLE) {
             // To draw the circle we need to use arc(). It requires us to calculculate the distance between the starting point to the end point. 
             // To do that we need to use the distance formula (ugh math)
@@ -94,12 +99,13 @@ export default class Paint { // Here we have a class called Paint. This class is
         }
 
         this.context.stroke();
-
+        this.context.lineWidth = 10; // This line of code controls the linewidth for the shapes
     }
 
-    drawFreeLine() {
-        this.context.lineTo(this.currentPos.x, this.currentPos.y);
-        this.context.stroke();
+    drawFreeLine() { // For the pen tool
+        this.context.lineTo(this.currentPos.x, this.currentPos.y); // make a line to the current position
+        this.context.stroke(); // Make a stroke baby
+        this.context.lineWidth = 10; // Then make the stroke thick baby
     }
 }
 
