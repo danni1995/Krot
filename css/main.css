@@ -20,7 +20,6 @@ html, body {
 
 /* ----- TOOLBAR START ----- */
 
-
 .mobile-popup {
   display: none
 }
@@ -34,7 +33,7 @@ html, body {
 } 
   
 .toolbar-items {
-  margin-top: 6rem;
+  margin-top: 5.5rem;
 }
 
 .toolbar .item {
@@ -166,96 +165,80 @@ main {
   width: 100%;
   display: flex;
   justify-content: start;
-  align-items: center;
-  
+  align-items: center; 
 }
 
 #my-canvas {
   cursor: pointer;
   border-radius: 16px;
-  
 }
   
-  /* ----- MAIN END ----- */
-  /* ----- WRAPPER END ----- */
+/* ----- MAIN END ----- */
+/* ----- WRAPPER END ----- */
 
 
-  /* - MOBILE MEDIA QUERY - */
-  @media only screen and (max-width: 600px) {
+/* - MOBILE MEDIA QUERY - */
+@media only screen and (max-width: 600px) {
     
-    .wrapper {
-      flex-direction: column-reverse;
-      align-items: center;
-      
-    } 
+  .wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
     
-    .toolbar {
-      flex-direction: row;
-      flex-wrap: wrap;
-      padding-top: 1rem;
-      padding-left: 0.5rem;
-      height: auto;
-      width: 90vw;
-      border-radius: 8px;
-      margin: 0;
-    }
-
-    .toolbar-items {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-    }
-
-    .mobile-popup {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100vw;
-    }
-
-    .mobile-toolbar-nav {
-      
-      width: 80px;
-      height: 7px;
-      border-radius: 6px;
-      border-style: none;
-
-    }
-    
-    .label {
-      margin: 1.5rem 1rem;
-    }
-
-    .shapes-wrapper  {
-      display: inline-flex;
-      top: auto;
-      bottom: 15rem;
-      left: auto;
-      right: 2rem;
-    }
-  
-    .label {
-      
-
-    }
-
-
-    .shapes-wrapper .item {
-    
-    }
-  
-    .logo {
-      display: none;
-    }
-  
-    .invisible-filler {
-      display: ;
-    }
-    
-
-    #mycanvas {
-    
-    }
   } 
+  
+  .toolbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    height: auto;
+    width: 90vw;
+    border-radius: 8px;
+    margin: 0;
+  }
+
+  .toolbar-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+
+  .mobile-toolbar-nav {
+    width: 80px;
+    height: 7px;
+    border-radius: 6px;
+    border-style: none;
+  }
+  
+  .label {
+    margin: 1.5rem 1rem;
+  }
+
+  .shapes-wrapper  {
+    display: inline-flex;
+    top: auto;
+    bottom: 15rem;
+    left: auto;
+    right: 2rem;
+  }
+  
+  main {
+    width: auto;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .invisible-filler {
+    display: none;
+  }
+} 
