@@ -1,7 +1,8 @@
 import ColorWheel from './colorwheel.class.js';
 import Paint from './paint.class.js';
 
-import {TOOL_BUCKET, TOOL_COLORWHEEL, TOOL_DOTS, TOOL_ERASER, TOOL_EYEDROP, TOOL_PEN, TOOL_SHAPES, TOOL_SHAPES_CIRCLE, TOOL_SHAPES_RECTANGLE, TOOL_SHAPES_TRIANGLE} from './tool.js';
+
+import {TOOL_BUCKET, TOOL_COLORWHEEL, TOOL_DOTS, TOOL_ERASER, TOOL_EYEDROP, TOOL_PEN, TOOL_SHAPES, TOOL_SHAPES_CIRCLE, TOOL_SHAPES_RECTANGLE, TOOL_SHAPES_TRIANGLE,} from './tool.js';
 
 // light <-> dark mode toggle
 document.addEventListener('DOMContentLoaded', () => {
@@ -43,6 +44,29 @@ var canvas = document.getElementById("my-canvas");
 var ctx = canvas.getContext("2d");
 const colorWheel = new ColorWheel(colorWheelCallback);
 console.log(colorWheel);
+
+
+// Let's you download the image you just created
+
+document.querySelectorAll("[data-command]").forEach(
+    (el) => {
+        el.addEventListener("click", (e) => {
+            
+            
+            let command = el.getAttribute('data-command');
+            
+            
+            if(command == 'download'){
+                var canvas = document.getElementById("my-canvas");
+                var image = canvas.toDataURL("image/png", 1.0).replace("image/png", "image/octet-stream");
+                var link = document.createElement('a');
+                link.download = "krot.png"; // the name of downloaded file
+                link.href = image;
+                link.click();
+            }
+        });
+    }
+);
 
 
 /* Here we select all the tools by finding them in the html with "[data-tool]".

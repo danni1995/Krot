@@ -9,3 +9,4 @@ export const TOOL_SHAPES_CIRCLE = "circle";
 export const TOOL_SHAPES_TRIANGLE = "triangle";
 export const TOOL_COLORWHEEL = "colorwheel";
 export const TOOL_DOTS = "dots";
+
