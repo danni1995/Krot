@@ -10,9 +10,14 @@ const resizeCanvas = () => {
 
   // resize the canvas (resizing the canvas also clears it)
   const { width, height } = canvas.parentElement.getBoundingClientRect();
-//   const height = width / CANVAS_ASPECT_RATIO;
-  canvas.width = width - 100;
-  canvas.height = height - 100;
+
+  if (width > 600) {
+    canvas.width = width - 100;
+    canvas.height = height - 100;
+  } else {
+    canvas.width = width - 10;
+    canvas.height = height - 10;
+  }
 
   // load the drawing back to the resized canvas
   const img = new Image;
@@ -23,7 +28,13 @@ const resizeCanvas = () => {
 };
   
 document.addEventListener('DOMContentLoaded', () => {
-    // Resize the canvas so that it fits the screen
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas, false);
+  // Resize the canvas so that it fits the screen
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas, false);
+
+  document.querySelector('.mobile-popup').addEventListener('click', (e) => {
+    /* e.target er elementið sem maður klikkaði á, í þessu tilfelli div.toolbar */
+    document.querySelector(".toolbar").classList.toggle('close');
+    console.log("abs")
+  });
 });

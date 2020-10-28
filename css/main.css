@@ -197,19 +197,26 @@ main {
 @media only screen and (max-width: 600px) {
     
   .wrapper {
+    position: relative;
+    overflow: hidden;
     flex-direction: column-reverse;
     align-items: center;
-    
   } 
   
   .toolbar {
     flex-direction: row;
     flex-wrap: wrap;
-    padding-top: 1rem;
-    height: auto;
+    height: 300px;
     width: 90vw;
     border-radius: 8px;
     margin: 0;
+    position: absolute; /* Mikilvægt */
+    top: calc(100% - 300px); /* Mikilvægt */
+    transition: all 0.7s; /* Mikilvægt */
+  }
+
+  .toolbar.close {
+    top: calc(100% - 50px); /* Mikilvægt*/
   }
 
   .toolbar-items {
@@ -220,11 +227,16 @@ main {
     padding: 0;
   }
 
+  .toolbar .item {
+    margin-top: 0;
+  }
+
   .mobile-popup {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
+    height: 40px;
   }
 
   .mobile-toolbar-nav {
@@ -238,7 +250,7 @@ main {
     margin: 1.5rem 1rem;
   }
 
-  .shapes-wrapper  {
+  .shapes-wrapper {
     display: inline-flex;
     top: auto;
     bottom: 15rem;
@@ -247,7 +259,12 @@ main {
   }
   
   main {
-    width: auto;
+    display: contents;
+    height: 100%;
+  }
+
+  .canvas-wrapper {
+    height: 100%;
   }
 
   .logo {
