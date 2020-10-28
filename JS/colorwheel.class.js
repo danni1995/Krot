@@ -23,7 +23,7 @@ export default class ColorWheel {
             this.imageData = this.context.getImageData(0,0, this.context.canvas.width, this.context.canvas.height);
         }
 
-        image.src = "/Toolbar/Icons/color-wheel-big-boy.png"; 
+        image.src = "Toolbar/Icons/color-wheel-big-boy.png"; 
 
         this.canvas.addEventListener("mousemove", (e) => {
             const point = getMouseLocationOnCanvas(e, this.canvas);
