@@ -76,6 +76,7 @@
 }
 
 .light .shapes-wrapper {
+  background-color: #f2f2f2;
   box-shadow: 
     -9px -9px 16px #ffffff, 
      9px  9px 16px #11131626;
@@ -108,7 +109,7 @@
 
 /* --- LOGO --- */
 .light .logo {
-  background-image: url("../logo/light-logo.svg");
+  background-image: url("/Toolbar/Logo/light-logo.svg");
 }
 
 /* --- CANVAS --- */

@@ -46,6 +46,7 @@
   display: none; 
 }
 
+
 /* --- LIGHT TO DARK MODE TOGGLE --- */
 .dark .toggle {
   background: linear-gradient(0.25turn, #33363d, #33363d, #fda704);
@@ -72,6 +73,7 @@
 }
 
 .dark .shapes-wrapper {
+  background-color: #33363D;
   box-shadow: 
   -9px -9px 16px #3b3c41, 
       9px  9px 16px #11131650;
@@ -104,7 +106,7 @@
 
 /* --- LOGO --- */
 .dark .logo {
-  background-image: url("../logo/dark-logo.svg");
+  background-image: url("/Toolbar/Logo/dark-logo.svg");
 }
 
 /* --- CANVAS --- */
