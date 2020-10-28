@@ -25,10 +25,10 @@ export default class ColorWheel {
 
         image.src = "/Toolbar/Icons/color-wheel-big-boy.png"; 
 
-        this.canvas.addEventListener("mousemove", (e) => {
+       this.canvas.addEventListener("mousemove", (e) => {
             const point = getMouseLocationOnCanvas(e, this.canvas);
             const pixel = this.getPixel(point);
-            this.callback(pixel);
+            this.callback(pixel); th
         });
 
         this.canvas.addEventListener("click", (e) => {

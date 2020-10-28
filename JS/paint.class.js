@@ -1,3 +1,4 @@
+import ColorWheel from './colorwheel.class.js';
 import Fill from './fill.class.js';
 import Point from './point.model.js';
 import Eyedropper from './sword.js';
@@ -57,11 +58,9 @@ export default class Paint { // Here we have a class called Paint. This class is
             var dColor = pixel[2] + 256 * pixel[1] + 65536 * pixel[0];
             var hexValue = '#' + ('0000' + dColor.toString(16)).substr(-6);
             this.selectedColor = hexValue;
-            //Assigning this color for selected color
-
-
-
-
+            
+            
+           
         }
 
     }
