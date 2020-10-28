@@ -19,7 +19,7 @@ export default class ColorWheel {
 
         var image = new Image();
         image.onload = () => {
-            this.context.drawImage(image, 0, 0, 300, 300);
+            this.context.drawImage(image, 0, 0, 200, 220);
             this.imageData = this.context.getImageData(0,0, this.context.canvas.width, this.context.canvas.height);
         }
 
