@@ -73,7 +73,9 @@ document.querySelectorAll("[data-tool]").forEach(
             }
 
         });
+        
     }
+    
 );
 
 
