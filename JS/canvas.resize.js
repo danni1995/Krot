@@ -14,9 +14,9 @@ const resizeCanvas = () => {
   if (width > 600) {
     canvas.width = width - 200;
     canvas.height = height - 100;
-  } else if (width < 600){
-    canvas.width = width - 200;
-    canvas.height = height - 100;
+  } else {
+    canvas.width = width - 10;
+    canvas.height = height - 110;
   } 
   
 

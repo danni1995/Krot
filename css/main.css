@@ -237,6 +237,7 @@ main {
     position: absolute;
     top: 7rem;
     left: 10rem;
+    z-index: 1;
   }
 
   .mobile-popup {
