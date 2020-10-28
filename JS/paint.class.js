@@ -44,6 +44,8 @@ export default class Paint { // Here we have a class called Paint. This class is
 
         this.startPos = getMouseLocationOnCanvas(e, this.canvas); // we make a property called startPos that uses the function getMouseLocation inside utility.js
 
+        
+
         if(this.tool === TOOL_PEN) { // If the mose is down and the tool selected is the pen tool
             this.context.beginPath(); // then begin a new path
             this.context.moveTo(this.startPos.x, this.startPos.y); 
@@ -58,14 +60,15 @@ export default class Paint { // Here we have a class called Paint. This class is
             var dColor = pixel[2] + 256 * pixel[1] + 65536 * pixel[0];
             var hexValue = '#' + ('0000' + dColor.toString(16)).substr(-6);
             this.selectedColor = hexValue;
-            
+            const preview  = document.querySelector(".preview");
+            preview.style.backgroundColor = hexValue;
             
            
         }
 
     }
 
-
+   
 
     // ON MOUSE MOVE
     onMouseMove(e) {
@@ -145,5 +148,6 @@ export default class Paint { // Here we have a class called Paint. This class is
             
         }
     }
+    
 }
 
