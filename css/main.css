@@ -69,7 +69,7 @@ html, body {
   height: 1.6rem;
   transform: rotate(45deg);
   border-radius: 0% 50% 50% 50%;
- position: relative;
+  position: relative;
   left: 0.7rem;
   top: 0.8rem;
 }
