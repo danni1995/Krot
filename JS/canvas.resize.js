@@ -12,12 +12,13 @@ const resizeCanvas = () => {
   const { width, height } = canvas.parentElement.getBoundingClientRect();
 
   if (width > 600) {
-    canvas.width = width - 100;
+    canvas.width = width - 200;
     canvas.height = height - 100;
-  } else {
-    canvas.width = width - 10;
-    canvas.height = height - 10;
-  }
+  } else if (width < 600){
+    canvas.width = width - 200;
+    canvas.height = height - 100;
+  } 
+  
 
   // load the drawing back to the resized canvas
   const img = new Image;

@@ -212,7 +212,11 @@ main {
     top: calc(100% - 300px); /* Mikilvægt */
     transition: all 0.7s; /* Mikilvægt */
   }
-
+  .invisible-filler {
+    height: 100%;
+    width: 230px;
+  }
+  
   .toolbar.close {
     top: calc(100% - 50px); /* Mikilvægt*/
   }
