@@ -18,7 +18,7 @@ const resizeCanvas = () => {
     canvas.width = width - 10;
     canvas.height = height - 110;
 
-  
+  }
 
   // load the drawing back to the resized canvas
   const img = new Image;
