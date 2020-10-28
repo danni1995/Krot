@@ -13,6 +13,15 @@
    -23px -23px 50px 0px #3B3C41;
 }
 
+@media only screen and (max-width: 600px) {
+  .dark .toolbar {
+    box-shadow: 
+    15px  20px 20px 0px #11131660, 
+   -15px 20px 20px 0px #3B3C41;
+  }
+} 
+
+
 .dark .mobile-toolbar-nav {
   background-color: #33363d;
   box-shadow: 4px 2px 4px #11131650 inset, 

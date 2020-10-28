@@ -19,7 +19,7 @@ export default class ColorWheel {
 
         var image = new Image();
         image.onload = () => {
-            this.context.drawImage(image, 0, 0, 200, 220);
+            this.context.drawImage(image, 0, 0, 150, 180);
             this.imageData = this.context.getImageData(0,0, this.context.canvas.width, this.context.canvas.height);
         }
 
@@ -31,6 +31,12 @@ export default class ColorWheel {
             this.callback(pixel);
         });
 
+        // hide color-wheel icon after first click
+        document.querySelector('.colorwheel').addEventListener('click', () => {
+            document.querySelector(".colorwheel").style.display = "none";
+        });
+
+        // hide color wheel picker after a color has been picked
         this.canvas.addEventListener("click", (e) => {
             document.querySelector(".color-wheel").style.display = "none";
         })

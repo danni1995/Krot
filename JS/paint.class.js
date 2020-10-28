@@ -1,5 +1,7 @@
+import ColorWheel from './colorwheel.class.js';
 import Fill from './fill.class.js';
 import Point from './point.model.js';
+import Eyedropper from './sword.js';
 import {TOOL_BUCKET, TOOL_COLORWHEEL, TOOL_DOTS, TOOL_ERASER, TOOL_EYEDROP, TOOL_PEN, TOOL_SHAPES, TOOL_SHAPES_CIRCLE, TOOL_SHAPES_RECTANGLE, TOOL_SHAPES_TRIANGLE} from './tool.js';
 import { findDistance, getMouseLocationOnCanvas} from './utility.js';
 
@@ -11,7 +13,6 @@ export default class Paint { // Here we have a class called Paint. This class is
         this.canvas = canvas; // Here we declare that the variable is the canvas, so we can referance the canvas in the code below.
         this.context = canvas.getContext("2d"); // Here we set the context to 2d, it provides the 2D rendering context for the drawing surface of the <canvas> element.
     }
-
 
     set selectedColor(color) {
         this.color = color;
@@ -28,18 +29,21 @@ export default class Paint { // Here we have a class called Paint. This class is
     // INIT
     init(){ // Here we set a method called init. We use this in app1.js (paint.init(); ) 
         this.canvas.onmousedown = e => this.onMouseDown(e); // We call the canvas and the mousedown event and call a method that is in this class. (onMouseDown(e))
+        
     }
 
 
     // ON MOUSE DOWN
     onMouseDown(e) { // This is a method. When the mouse is down this executes.
 
-        this.savedData = this.context.getImageData(0, 0, this.canvas.clientWidth, this.canvas.clientHeight); // veriable that saves the image data from when mouse goes down.
+        this.imageData = this.context.getImageData(0, 0, this.canvas.clientWidth, this.canvas.clientHeight); // veriable that saves the image data from when mouse goes down.
 
         this.canvas.onmousemove = e => this.onMouseMove(e); // MouseMove will execute as well as long as the mouse is down (kind of like dragging)
         document.onmouseup = e => this.onMouseUp(e); // Mouse up will execute and will make everything stop
 
         this.startPos = getMouseLocationOnCanvas(e, this.canvas); // we make a property called startPos that uses the function getMouseLocation inside utility.js
+
+        
 
         if(this.tool === TOOL_PEN) { // If the mose is down and the tool selected is the pen tool
             this.context.beginPath(); // then begin a new path
@@ -48,9 +52,22 @@ export default class Paint { // Here we have a class called Paint. This class is
             new Fill(this.canvas, this.startPos, this.color);
         } else if (this.tool === TOOL_ERASER) {
             this.context.clearRect(this.startPos.x - 10, this.startPos.y - 10, 30, 30);
-        } 
+        } else if (this.tool === TOOL_EYEDROP){
+            //Get color for pixel
+            const pixel = this.getPixel(this.startPos)
+            console.log(pixel);
+            var dColor = pixel[2] + 256 * pixel[1] + 65536 * pixel[0];
+            var hexValue = '#' + ('0000' + dColor.toString(16)).substr(-6);
+            this.selectedColor = hexValue;
+            const preview  = document.querySelector(".preview"); // The last two lines make the colordrop change color when using eyedropper.
+            preview.style.backgroundColor = hexValue; 
+            
+           
+        }
+
     }
 
+   
 
     // ON MOUSE MOVE
     onMouseMove(e) {
@@ -88,7 +105,7 @@ export default class Paint { // Here we have a class called Paint. This class is
     // DRAW SHAPE FUNCTION
     drawShape() {
 
-        this.context.putImageData(this.savedData, 0, 0); // Puts the image data (from getImageData) back onto the canvas
+        this.context.putImageData(this.imageData, 0, 0); // Puts the image data (from getImageData) back onto the canvas
 
         this.context.beginPath(); // we use the method beginPath to Begin a path, we want this for all shapes.
 
@@ -116,5 +133,24 @@ export default class Paint { // Here we have a class called Paint. This class is
         this.context.lineWidth = 10; // Then make the stroke thick baby
     }
 
+
+    getPixel(point) { // This gets the pixel color information in rgba
+        if(point.x < 0 || point.y < 0 || point.x >= this.imageData.width, point.y >= this.imageData.height) { 
+            return [-1, -1, -1, -1]; // impossible color
+        } else {
+            
+            const offset = (point.y * this.imageData.width + point.x) * 4;
+            return [
+                this.imageData.data[offset + 0], // red
+                this.imageData.data[offset + 1], // green
+                this.imageData.data[offset + 2], // blue
+                this.imageData.data[offset + 3] // alpha
+            ];
+            
+        }
+    }
+
+    
+    
 }
 

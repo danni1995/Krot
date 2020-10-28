@@ -25,7 +25,7 @@ document.querySelector('#darklight-toggle').addEventListener('click', () => {
 
 let paint = new Paint('my-canvas');
 paint.activeTool = TOOL_PEN;
-paint.selectedColor = "#000000";
+paint.selectedColor = "#A9A9A9";
 paint.init();
 
 const preview  = document.querySelector(".preview");
@@ -97,7 +97,9 @@ document.querySelectorAll("[data-tool]").forEach(
             }
 
         });
+        
     }
+    
 );
 
 

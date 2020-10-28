@@ -13,6 +13,14 @@
      15px  15px 45px #11131626;
   }
 
+ @media only screen and (max-width: 600px) {
+    .light .toolbar {
+      box-shadow:
+      -15px 20px 20px #ffffff, 
+       15px  20px 20px #11131626;
+    }
+  }
+
 .light .mobile-toolbar-nav {
   background-color: #f2f2f2;
   box-shadow: 
@@ -88,6 +96,16 @@
   border-radius: 60px;
   display: block;
   transition: all 0.3s;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .light .shapes-wrapper {
+    box-shadow: 
+    -9px 9px 16px #ffffff, 
+    9px -9px 16px #11131626;
+  }
 }
 
 .light .shapes-wrapper img {
