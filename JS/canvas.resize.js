@@ -35,4 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.mobile-popup').addEventListener('click', () => {
     document.querySelector(".toolbar").classList.toggle('close');
   });
+  
 });
