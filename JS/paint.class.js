@@ -14,7 +14,6 @@ export default class Paint { // Here we have a class called Paint. This class is
         this.context = canvas.getContext("2d"); // Here we set the context to 2d, it provides the 2D rendering context for the drawing surface of the <canvas> element.
     }
 
-
     set selectedColor(color) {
         this.color = color;
         this.context.strokeStyle = this.color;
@@ -60,8 +59,8 @@ export default class Paint { // Here we have a class called Paint. This class is
             var dColor = pixel[2] + 256 * pixel[1] + 65536 * pixel[0];
             var hexValue = '#' + ('0000' + dColor.toString(16)).substr(-6);
             this.selectedColor = hexValue;
-            const preview  = document.querySelector(".preview");
-            preview.style.backgroundColor = hexValue;
+            const preview  = document.querySelector(".preview"); // The last two lines make the colordrop change color when using eyedropper.
+            preview.style.backgroundColor = hexValue; 
             
            
         }
@@ -148,6 +147,8 @@ export default class Paint { // Here we have a class called Paint. This class is
             
         }
     }
+
+    
     
 }
 
