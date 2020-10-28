@@ -100,6 +100,8 @@ export default class Paint { // Here we have a class called Paint. This class is
     }
 
 
+
+
     // DRAW SHAPE FUNCTION
     drawShape() {
 
