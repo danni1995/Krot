@@ -32,9 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas, false);
 
-  document.querySelector('.mobile-popup').addEventListener('click', (e) => {
-    /* e.target er elementið sem maður klikkaði á, í þessu tilfelli div.toolbar */
+  document.querySelector('.mobile-popup').addEventListener('click', () => {
     document.querySelector(".toolbar").classList.toggle('close');
-    console.log("abs")
   });
 });

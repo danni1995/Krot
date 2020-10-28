@@ -63,26 +63,22 @@ html, body {
   display: block;
 }
 
-.toolbar .item.clicked .colorwheel {
-  display: none;
-}
-
 .preview {
   background-color: rgb(0, 0, 0);
   width: 1.6rem;
   height: 1.6rem;
   transform: rotate(45deg);
   border-radius: 0% 50% 50% 50%;
-  position: absolute;
-  left: 1.68rem;
-  top: 33.3rem;
+ position: relative;
+  left: 0.7rem;
+  top: 0.8rem;
 }
 
 #colorwheel {
   position: absolute;
-  left: 8rem;
-  top: 30rem;
-}
+  left: 7rem;
+  top: 28rem;
+} 
 
 .toolbar img.eraser {
   top: 55%;
@@ -233,6 +229,12 @@ main {
     margin-top: 0;
   }
 
+  #colorwheel {
+    position: absolute;
+    top: 7rem;
+    left: 10rem;
+  }
+
   .mobile-popup {
     display: flex;
     justify-content: center;
@@ -253,13 +255,24 @@ main {
   }
 
   .shapes-wrapper {
-    display: inline-flex;
-    top: auto;
-    bottom: 15rem;
-    left: auto;
-    right: 2rem;
+    transform:rotate(90deg);
+    position: relative;
+    top: 0.3rem;
+    left: 4rem;
+    padding: 0.3rem;
+    border-radius: 8px;
+    display: none;
   }
   
+  .shapes-wrapper .item {
+    transform:rotate(-90deg);
+    margin: 0;
+  }
+
+  .shapes-wrapper .item .triangle {
+    top: 55%;
+  } 
+
   main {
     display: contents;
     height: 100%;
