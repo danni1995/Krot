@@ -12,10 +12,10 @@ const resizeCanvas = () => {
   const { width, height } = canvas.parentElement.getBoundingClientRect();
 
   if (width > 600) {
-    canvas.width = width - 200;
+    canvas.width = width - 100;
     canvas.height = height - 100;
   } else if (width < 600){
-    canvas.width = width - 200;
+    canvas.width = width - 100;
     canvas.height = height - 100;
   } 
   
