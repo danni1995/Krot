@@ -29,6 +29,7 @@ export default class Paint { // Here we have a class called Paint. This class is
     // INIT
     init(){ // Here we set a method called init. We use this in app1.js (paint.init(); ) 
         this.canvas.onmousedown = e => this.onMouseDown(e); // We call the canvas and the mousedown event and call a method that is in this class. (onMouseDown(e))
+        this.canvas.ontouchstart = e => this.onMouseDown(e); 
         
     }
 
@@ -39,7 +40,9 @@ export default class Paint { // Here we have a class called Paint. This class is
         this.imageData = this.context.getImageData(0, 0, this.canvas.clientWidth, this.canvas.clientHeight); // veriable that saves the image data from when mouse goes down.
 
         this.canvas.onmousemove = e => this.onMouseMove(e); // MouseMove will execute as well as long as the mouse is down (kind of like dragging)
+        this.canvas.ontouchmove = e => this.onMouseMove(e); 
         document.onmouseup = e => this.onMouseUp(e); // Mouse up will execute and will make everything stop
+        document.ontouchend = e => this.onMouseUp(e); 
 
         this.startPos = getMouseLocationOnCanvas(e, this.canvas); // we make a property called startPos that uses the function getMouseLocation inside utility.js
 
@@ -55,14 +58,17 @@ export default class Paint { // Here we have a class called Paint. This class is
         } else if (this.tool === TOOL_EYEDROP){
             //Get color for pixel
             const pixel = this.getPixel(this.startPos)
-            console.log(pixel);
-            var dColor = pixel[2] + 256 * pixel[1] + 65536 * pixel[0];
-            var hexValue = '#' + ('0000' + dColor.toString(16)).substr(-6);
+            /* var dColor = pixel[2] + 256 * pixel[1] + 65536 * pixel[0];
+            var hexValue = '#' + ('0000' + dColor.toString(16)).substr(-6); */
+            const hexValue = "#" +
+            ("0" + parseInt(pixel[0],10).toString(16)).slice(-2) +
+            ("0" + parseInt(pixel[1],10).toString(16)).slice(-2) +
+            ("0" + parseInt(pixel[2],10).toString(16)).slice(-2) 
+            console.log(hexValue);
             this.selectedColor = hexValue;
             const preview  = document.querySelector(".preview"); // The last two lines make the colordrop change color when using eyedropper.
             preview.style.backgroundColor = hexValue; 
             
-           
         }
 
     }
@@ -71,6 +77,7 @@ export default class Paint { // Here we have a class called Paint. This class is
 
     // ON MOUSE MOVE
     onMouseMove(e) {
+        console.log(this.currentPos);
         this.currentPos = getMouseLocationOnCanvas(e, this.canvas); // we make a property called currentPos that uses the function getMouseLocation inside utility.js
 
         // DRAWING SHAPES
